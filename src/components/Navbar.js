@@ -10,7 +10,8 @@ const Navbar = styled.nav`
   height: 80px;
   padding: 5px 30px;
   z-index: 3;
-  background-color: #f5f5f5;
+  /* background-color: #f5f5f5; */
+  background-color: #ffcdd2;
 `
 const NavCenter = styled.div`
   height: 100%;
@@ -57,10 +58,8 @@ const handleButton = (ref, btnRef) => {
   btnRef.current.classList.toggle('btn-active')
 }
 export const NavbarFixed = () => {
-  // const [isHamburgerOpen, setIsHamburgerOpen] = useState(false)
   const sideMenu = useRef(null)
   const btn = useRef(null)
-
   return (
     <Navbar>
       <NavCenter>
