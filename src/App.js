@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { Hero } from './components/Hero'
+import { NavbarFixed } from './components/Navbar'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { createGlobalStyle } from 'styled-components'
 
+// https://www.behance.net/gallery/128186947/Diamond-Dreams-Jewelry-Ecommerce-Website
+const GlobalStyle = createGlobalStyle`
+li {
+  list-style-type: none;
+  padding: 5px 30px;
+}
+a {
+  text-decoration: none;
+}
+.active {
+  transform: translateX(0);
+}
+.btn-active {
+  transform: rotate(45deg);
+  
+}
+`
+// const MainContainer = styled.main`
+//   padding-top: 70px;
+// `
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <GlobalStyle />
+      <NavbarFixed />
+      {/* <MainContainer> */}
+      <Hero />
+      {/* </MainContainer> */}
+    </>
+  )
 }
 
-export default App;
+export default App
