@@ -5,6 +5,10 @@ import { createGlobalStyle } from 'styled-components'
 
 // https://www.behance.net/gallery/128186947/Diamond-Dreams-Jewelry-Ecommerce-Website
 const GlobalStyle = createGlobalStyle`
+ul {
+  margin: 0;
+  padding: 0;
+}
 li {
   list-style-type: none;
   padding: 5px 30px;
