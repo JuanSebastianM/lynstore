@@ -1,7 +1,7 @@
 import React from 'react'
 // 347702239 Juandy
 // 2240554728 lyn
-import styled, { keyframes } from 'styled-components'
+import styled, { keyframes } from 'styled-components/macro'
 import office from '../images/office.jpg'
 import calma from '../images/calma.png'
 import dosalmas from '../images/dosalmas.png'
@@ -18,33 +18,47 @@ const breeze = keyframes`
 `
 
 const Wrapper = styled.section`
+  width: 100%;
   min-height: 100vh;
+  background-color: #d4e0de;
 `
 const ImageContainer = styled.div`
   padding-top: 80px;
-  margin-bottom: 40px;
   min-height: 100vh;
-  background-color: #ffcdd2;
 `
 const SiteImage = styled.img`
   object-fit: contain;
   width: 100%;
   z-index: -1;
 `
+const ImagesContainer = styled.div`
+  display: flex;
+  height: 140px;
+  justify-content: space-evenly;
+`
 const ImageOneContainer = styled.div`
-  position: absolute;
-  box-shadow: 0px 1px 6px #ffffff90;
+  box-shadow: 4px 4px 5px -4px #000;
   border-radius: 3px;
-  top: 390px;
-  left: 20px;
   background-color: #fff;
-  width: 140px;
-  height: 160px;
+  width: 100px;
+  height: 120px;
+  align-self: flex-end;
   transition: all 500ms ease;
   transform: rotate(15deg);
   &:hover {
     animation-name: ${breeze};
     animation-duration: 4s;
+  }
+  &::before {
+    position: absolute;
+    top: -30px;
+    left: 45px;
+    content: '';
+    width: 5px;
+    height: 30px;
+    border-top-left-radius: 30%;
+    border-top-right-radius: 30%;
+    background-color: #fff;
   }
 `
 const ImageCardOne = styled(SiteImage)`
@@ -52,11 +66,10 @@ const ImageCardOne = styled(SiteImage)`
   filter: drop-shadow(0px 1px 6px #fff);
 `
 const ImageTwoContainer = styled(ImageOneContainer)`
-  left: 155px;
   transform: rotate(340deg);
+  align-self: flex-start;
 `
 const ImageCardTwo = styled(ImageCardOne)`
-  width: 100%;
   transform: rotate(325deg);
 `
 export const Hero = () => {
@@ -65,14 +78,23 @@ export const Hero = () => {
       <Wrapper>
         <ImageContainer>
           <SiteImage src={office} alt="LynStore's physical site" />
-          <ImageOneContainer>
-            <ImageCardOne src={calma} alt='' />
-          </ImageOneContainer>
-          <ImageTwoContainer>
-            <ImageCardTwo src={dosalmas} alt='' />
-          </ImageTwoContainer>
+          <ImagesContainer>
+            <ImageOneContainer>
+              <ImageCardOne src={calma} alt='' />
+            </ImageOneContainer>
+            <ImageTwoContainer>
+              <ImageCardTwo src={dosalmas} alt='' />
+            </ImageTwoContainer>
+          </ImagesContainer>
         </ImageContainer>
-        <h1>Mereces lo que sueñas</h1>
+        <h1
+          css={`
+            text-align: center;
+            padding: 30px 0;
+          `}
+        >
+          Mereces lo que sueñas
+        </h1>
       </Wrapper>
     </>
   )
