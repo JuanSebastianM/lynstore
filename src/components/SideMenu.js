@@ -2,21 +2,19 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
-  background-color: #f5f5f5;
+  background-color: #d4e0de;
   position: absolute;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  top: 80px;
   left: 0;
+  text-align: center;
+  justify-content: center;
+  padding-top: 100px;
   width: 100%;
   min-height: 100vh;
   transform: translateX(-100%);
   transition: transform 500ms ease;
-  padding-bottom: 2rem;
 `
 export const SideMenu = ({ menuRef }) => {
-  console.log('menuref', menuRef)
   return (
     <Container ref={menuRef}>
       <ul>
