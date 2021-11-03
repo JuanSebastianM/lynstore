@@ -5,6 +5,7 @@ import styled, { keyframes } from 'styled-components/macro'
 import office from '../images/office.jpg'
 import calma from '../images/calma.png'
 import dosalmas from '../images/dosalmas.png'
+import beachpic from '../images/beachpic.jpg'
 const breeze = keyframes`
 0% {
     transform: rotate(15deg);
@@ -23,7 +24,6 @@ const Wrapper = styled.section`
   background-color: #d4e0de;
 `
 const ImageContainer = styled.div`
-  padding-top: 80px;
   min-height: 100vh;
 `
 const SiteImage = styled.img`
@@ -72,10 +72,68 @@ const ImageTwoContainer = styled(ImageOneContainer)`
 const ImageCardTwo = styled(ImageCardOne)`
   transform: rotate(325deg);
 `
+const TextWrapper = styled.div`
+  padding: 80px 50px 0;
+  min-height: 100vh;
+  letter-spacing: 1.2px;
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.5)
+    ),
+    url('https://images.unsplash.com/photo-1561060511-78b14b799fe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
+  /* background-image: url('https://images.unsplash.com/photo-1561060511-78b14b799fe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'); */
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-position: left;
+  font-weight: bolder;
+  color: #d4e0de;
+  text-shadow: 2px 2px 6px #000;
+`
+const LinkBtn = styled.a`
+  border: 2px solid #000;
+  text-align: center;
+  padding: 5px 10px;
+  display: block;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #d4e0de;
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 500ms ease;
+  &:hover {
+    color: #d4e0de;
+  }
+  &:active {
+    transform: scale(0.8);
+  }
+`
 export const Hero = () => {
   return (
     <>
       <Wrapper>
+        <TextWrapper>
+          <h1
+            css={`
+              text-align: center;
+              padding: 30px 0;
+            `}
+          >
+            Mereces lo que sueñas
+          </h1>
+          <p>
+            Vistete como quieras, sé quien quieras, estudia lo que quieras,
+            viaja a donde quieras.
+          </p>
+          <p>Sé feliz como TÚ QUIERAS.</p>
+          <p>Sé feliz con LynStore.</p>
+          <LinkBtn>Conoce más sobre nosotros</LinkBtn>
+        </TextWrapper>
+        {/* <p>
+          Somos fabricantes de accesorios para todos los gustos y edades 🌸🙌✨
+        </p>
+        <p>Vendemos al detal y por mayor</p>
+        <p>Envíos a toda Colombia</p> */}
         <ImageContainer>
           <SiteImage src={office} alt="LynStore's physical site" />
           <ImagesContainer>
@@ -87,14 +145,6 @@ export const Hero = () => {
             </ImageTwoContainer>
           </ImagesContainer>
         </ImageContainer>
-        <h1
-          css={`
-            text-align: center;
-            padding: 30px 0;
-          `}
-        >
-          Mereces lo que sueñas
-        </h1>
       </Wrapper>
     </>
   )
