@@ -11,6 +11,7 @@ const Navbar = styled.nav`
   padding: 5px 30px;
   z-index: 3;
   background-color: #d4e0de;
+  box-shadow: 0px 1px 10px #000;
 `
 const NavCenter = styled.div`
   height: 100%;
