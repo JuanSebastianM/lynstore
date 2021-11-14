@@ -1,13 +1,12 @@
 import { Hero } from './components/Hero'
-import { NavbarFixed } from './components/Navbar'
-import 'bootstrap/dist/css/bootstrap.min.css'
+import { Navbar } from './components/Navbar'
 import { createGlobalStyle } from 'styled-components'
 
-// https://www.behance.net/gallery/128186947/Diamond-Dreams-Jewelry-Ecommerce-Website
 const GlobalStyle = createGlobalStyle`
-ul {
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 li {
   list-style-type: none;
@@ -16,25 +15,37 @@ li {
 a {
   text-decoration: none;
 }
+p {
+  margin-bottom: 15px;
+}
 .active {
   transform: translateX(0);
 }
 .btn-active {
-  transform: rotate(45deg);
-  
+  transform: rotate(90deg);
+}
+.navBtn {
+  transform-origin: center;
+  filter: drop-shadow(0px 0px 1px #fff);
+  border-radius: 20% 90% 0% 100%;
+  transition: all 500ms ease;
+}
+.navbar-scroll {
+  background: linear-gradient(45deg, rgba(115,85,86) 0%, rgba(0,0,0) 100%);
+}
+.navbar-office {
+  background-color: #d4e0de;
+}
+.navbar-office a {
+  color: black;
 }
 `
-// const MainContainer = styled.main`
-//   padding-top: 70px;
-// `
 function App() {
   return (
     <>
       <GlobalStyle />
-      <NavbarFixed />
-      {/* <MainContainer> */}
+      <Navbar />
       <Hero />
-      {/* </MainContainer> */}
     </>
   )
 }
