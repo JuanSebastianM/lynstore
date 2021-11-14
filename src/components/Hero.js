@@ -6,7 +6,7 @@ import office from '../images/office.jpg'
 import calma from '../images/calma.png'
 import dosalmas from '../images/dosalmas.png'
 import beachpic from '../images/beachpic.jpg'
-const breeze = keyframes`
+const breezeOne = keyframes`
 0% {
     transform: rotate(15deg);
 }
@@ -15,6 +15,17 @@ const breeze = keyframes`
 }
 100% {
     transform: rotate(15deg);
+}
+`
+const breezeTwo = keyframes`
+0% {
+    transform: rotate(-15deg);
+}
+50% {
+    transform: rotate(20deg);
+}
+100% {
+    transform: rotate(-15deg);
 }
 `
 
@@ -34,7 +45,7 @@ const SiteImage = styled.img`
 const ImagesContainer = styled.div`
   display: flex;
   height: 140px;
-  justify-content: space-evenly;
+  justify-content: center;
 `
 const ImageOneContainer = styled.div`
   box-shadow: 4px 4px 5px -4px #000;
@@ -44,10 +55,11 @@ const ImageOneContainer = styled.div`
   height: 120px;
   align-self: flex-end;
   transition: all 500ms ease;
+  transform-origin: center -20px;
   transform: rotate(15deg);
   &:hover {
-    animation-name: ${breeze};
-    animation-duration: 4s;
+    animation-name: ${breezeOne};
+    animation-duration: 3s;
   }
   &::before {
     position: absolute;
@@ -66,8 +78,11 @@ const ImageCardOne = styled(SiteImage)`
   filter: drop-shadow(0px 1px 6px #fff);
 `
 const ImageTwoContainer = styled(ImageOneContainer)`
-  transform: rotate(340deg);
+  transform: rotate(-15deg);
   align-self: flex-start;
+  &:hover {
+    animation-name: ${breezeTwo};
+  }
 `
 const ImageCardTwo = styled(ImageCardOne)`
   transform: rotate(325deg);
@@ -75,11 +90,11 @@ const ImageCardTwo = styled(ImageCardOne)`
 const TextWrapper = styled.div`
   padding: 80px 50px 0;
   min-height: 100vh;
-  letter-spacing: 1.2px;
+  letter-spacing: 1.5px;
   background-image: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.7),
-      rgba(0, 0, 0, 0.5)
+      rgba(0, 0, 0, 0.5) 20%,
+      rgba(250, 250, 250, 0.5) 80%
     ),
     url('https://images.unsplash.com/photo-1561060511-78b14b799fe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80');
   /* background-image: url('https://images.unsplash.com/photo-1561060511-78b14b799fe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'); */
@@ -135,7 +150,7 @@ export const Hero = () => {
         <p>Vendemos al detal y por mayor</p>
         <p>Envíos a toda Colombia</p> */}
         <ImageContainer>
-          <SiteImage src={office} alt="LynStore's physical site" />
+          <SiteImage src={office} alt='Local físico de LynStore' />
           <ImagesContainer>
             <ImageOneContainer>
               <ImageCardOne src={calma} alt='' />
