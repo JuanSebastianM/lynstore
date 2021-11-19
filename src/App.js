@@ -3,10 +3,13 @@ import { Navbar } from './components/Navbar'
 import { createGlobalStyle } from 'styled-components'
 
 const GlobalStyle = createGlobalStyle`
-* {
+html {
+  box-sizing: border-box;
+}
+*, *::after, *::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 li {
   list-style-type: none;
@@ -14,10 +17,14 @@ li {
 }
 a {
   text-decoration: none;
+  color: #000;
 }
 p {
   margin-bottom: 15px;
+  font-size: 1.2rem;
+  line-height: 1.5;
 }
+
 .active {
   transform: translateX(0);
 }
@@ -33,11 +40,11 @@ p {
 .navbar-scroll {
   background: linear-gradient(45deg, rgba(115,85,86) 0%, rgba(0,0,0) 100%);
 }
+.side-menu-top {
+  background: linear-gradient(40deg, rgba(0, 0, 0) 0%, rgba(115, 85, 86) 100%);
+}
 .navbar-office {
   background-color: #d4e0de;
-}
-.navbar-office a {
-  color: black;
 }
 `
 function App() {
