@@ -57,26 +57,24 @@ const handleButton = (ref, btnRef) => {
   btnRef.current.classList.toggle('btn-active')
 }
 export const Navbar = () => {
+  const containerRef = useRef(null)
   const sideMenu = useRef(null)
   const btn = useRef(null)
   const navbar = useRef(null)
 
   const changeBgColor = () => {
     if (window.scrollY < 30) {
-      navbar.current.classList.remove('navbar-scroll')
       navbar.current.classList.remove('navbar-office')
-      sideMenu.current.classList.remove('navbar-office')
     }
     if (window.scrollY >= 30) {
-      navbar.current.classList.add('navbar-scroll')
-      sideMenu.current.classList.add('navbar-scroll')
-    }
-    if (window.scrollY > 450) {
-      navbar.current.classList.remove('navbar-scroll')
-      sideMenu.current.classList.remove('navbar-scroll')
       navbar.current.classList.add('navbar-office')
-      sideMenu.current.classList.add('navbar-office')
     }
+    // if (window.scrollY > 450) {
+    //   navbar.current.classList.remove('navbar-scroll')
+    //   sideMenu.current.classList.remove('side-menu-top')
+    //   navbar.current.classList.add('navbar-office')
+    //   sideMenu.current.classList.add('navbar-office')
+    // }
   }
   useEffect(() => {
     window.addEventListener('scroll', changeBgColor)
@@ -109,12 +107,12 @@ export const Navbar = () => {
           <Button
             ref={btn}
             type='button'
-            onClick={() => handleButton(sideMenu, btn)}
+            onClick={() => handleButton(containerRef, btn)}
           >
             <FaBars className='navBtn' />
           </Button>
         </List>
-        <SideMenu menuRef={sideMenu} />
+        <SideMenu menuRef={sideMenu} contRef={containerRef} btnRef={btn} />
       </NavCenter>
     </Nav>
   )
