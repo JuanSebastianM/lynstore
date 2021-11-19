@@ -37,12 +37,6 @@ p {
   border-radius: 20% 90% 0% 100%;
   transition: all 500ms ease;
 }
-.navbar-scroll {
-  background: linear-gradient(45deg, rgba(115,85,86) 0%, rgba(0,0,0) 100%);
-}
-.side-menu-top {
-  background: linear-gradient(40deg, rgba(0, 0, 0) 0%, rgba(115, 85, 86) 100%);
-}
 .navbar-office {
   background-color: #d4e0de;
 }
