@@ -33,12 +33,28 @@ p {
 }
 .navBtn {
   transform-origin: center;
-  filter: drop-shadow(0px 0px 1px #fff);
+  color: #d4e0de;
+  filter: drop-shadow(0px 0px 1px #000);
   border-radius: 20% 90% 0% 100%;
   transition: all 500ms ease;
 }
 .navbar-office {
   background-color: #d4e0de;
+  box-shadow: 0px 2px 10px #000;
+  @media screen and (min-width: 1023px) {
+    height: 80px;
+  }
+}
+.navbar-office img{
+  @media screen and (min-width: 1023px) {
+    width: 110px;
+  }
+}
+.navbar-office a, .navbar-office .navBtn {
+  color: #000;
+}
+.navbar-office .navBtn {
+  filter: drop-shadow(0px 0px 1px #fff);
 }
 `
 function App() {
