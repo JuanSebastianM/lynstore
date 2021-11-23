@@ -88,25 +88,55 @@ const ImageTwoContainer = styled(ImageOneContainer)`
 const ImageCardTwo = styled(ImageCardOne)`
   transform: rotate(325deg);
 `
-const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 80px 50px 0;
+const HeroContainer = styled.div`
+  width: 100%;
   min-height: 100vh;
-  letter-spacing: 1.5px;
-  /* background-color: #d4e0de; */
-  /* background-image: url('https://images.unsplash.com/photo-1616098063625-65f32186e609?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'); */
-  background-image: linear-gradient(
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 60px;
+  /* background-image: linear-gradient(
       0deg,
       rgba(0, 0, 0, 0.5) 20%,
       rgba(250, 250, 250, 0.5) 80%
     ),
-    url('https://images.unsplash.com/photo-1597200381847-30ec200eeb9a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80');
+    url('https://images.unsplash.com/photo-1597200381847-30ec200eeb9a?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80'); */
+  background-image: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url('https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80');
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   @media screen and (min-width: 1023px) {
-    background-image: none;
+    justify-content: flex-start;
+    padding-left: 80px;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.3)
+      ),
+      url('https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80');
+    background-position: top;
     color: #000;
   }
+`
+const TextWrapper = styled.div`
+  /* background: red; */
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center; */
+  /* padding: 80px 50px 0; */
+  max-width: 400px;
+  width: 80%;
+  letter-spacing: 1.5px;
+  /* background-color: #d4e0de; */
+  /* background-image: url('https://images.unsplash.com/photo-1616098063625-65f32186e609?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80'); */
+
   // desktop
   /* background-image: linear-gradient(
       0deg,
@@ -122,16 +152,15 @@ const TextWrapper = styled.div`
     ),
     url('https://images.unsplash.com/photo-1561060511-78b14b799fe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'); */
   /* background-image: url('https://images.unsplash.com/photo-1561060511-78b14b799fe1?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80'); */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   color: #fff;
   text-shadow: 2px 2px 6px #000;
 `
 const LinkBtn = styled.a`
+  margin: 0 auto;
   text-align: center;
   padding: 5px 10px;
-  display: block;
+  display: inline-block;
+  width: 160px;
   border-radius: 10px;
   background-color: rgba(255, 255, 255, 0.5);
   background-color: #d4e0de;
@@ -155,6 +184,7 @@ const HeroImage = styled.img`
     display: none;
   }
 `
+
 export const Hero = () => {
   return (
     <>
@@ -166,24 +196,27 @@ export const Hero = () => {
             max-width: 100%;
           `}
         >
-          <HeroImage src={toystory} alt='Toy story' />
-          <TextWrapper>
-            <h1
-              css={`
-                text-align: center;
-                margin-bottom: 30px;
-              `}
-            >
-              Mereces lo que sueñas
-            </h1>
-            <p>
-              Vistete como quieras, sé quien quieras, estudia lo que quieras,
-              viaja a donde quieras.
-            </p>
-            <p>Sé feliz como TÚ QUIERAS.</p>
-            <p>Sé feliz con LynStore.</p>
-            <LinkBtn>Conoce más sobre nosotros</LinkBtn>
-          </TextWrapper>
+          {/* <HeroImage src={toystory} alt='Toy story' /> */}
+          <HeroContainer>
+            <TextWrapper>
+              <h1
+                css={`
+                  text-align: center;
+                  margin-bottom: 30px;
+                `}
+              >
+                Mereces lo que sueñas
+              </h1>
+              <p>
+                Vistete como quieras, sé quien quieras, estudia lo que quieras,
+                viaja a donde quieras.
+              </p>
+              <p>Sé feliz como TÚ QUIERAS.</p>
+              <p>Sé feliz con LynStore.</p>
+              <LinkBtn>Visita nuestra tienda</LinkBtn>
+              <LinkBtn>Conoce más sobre nosotros</LinkBtn>
+            </TextWrapper>
+          </HeroContainer>
         </div>
         {/* <p>
           Somos fabricantes de accesorios para todos los gustos y edades 🌸🙌✨
