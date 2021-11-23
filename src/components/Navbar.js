@@ -9,7 +9,6 @@ const Nav = styled.nav`
   height: 80px;
   padding: 5px 30px;
   z-index: 3;
-  box-shadow: 0px 2px 10px #000;
   transition: all 500ms ease;
 `
 const NavCenter = styled.div`
@@ -24,16 +23,27 @@ const List = styled.ul`
     justify-content: space-around;
   }
 `
+const NavLink = styled.a`
+  color: #d4e0de;
+  padding: 5px 10px;
+  border: 2px solid transparent;
+  &:hover {
+    border: 2px solid #000;
+  }
+`
 const Img = styled.img`
   cursor: pointer;
   border-radius: 50%;
-  height: 90px;
   max-width: 100%;
+  width: 110px;
   object-fit: contain;
   filter: drop-shadow(1px 0 0 #000);
-  transition: transform 600ms ease;
+  transition: all 600ms ease;
   &:hover {
     transform: scale(1.1);
+  }
+  @media screen and (min-width: 1023px) {
+    width: 150px;
   }
 `
 const DesktopDiv = styled.div`
@@ -52,8 +62,13 @@ const Button = styled.button`
   }
 `
 
-const handleButton = (ref, btnRef) => {
+const handleButton = (ref, btnRef, nav) => {
   ref.current.classList.toggle('active')
+  if (window.scrollY >= 30) {
+    nav.current.classList.add('navbar-office')
+  } else {
+    nav.current.classList.toggle('navbar-office')
+  }
   btnRef.current.classList.toggle('btn-active')
 }
 export const Navbar = () => {
@@ -89,25 +104,25 @@ export const Navbar = () => {
         <List>
           <DesktopDiv>
             <li>
-              <a href='/'>¿Quiénes Somos?</a>
+              <NavLink href='/'>¿Quiénes Somos?</NavLink>
             </li>
             <li>
-              <a href='/'>¿Quiénes Somos?</a>
+              <NavLink href='/'>¿Quiénes Somos?</NavLink>
             </li>
           </DesktopDiv>
           <Img src={logo} alt='Local físico de LynStore' />
           <DesktopDiv>
             <li>
-              <a href='/'>¿Quiénes Somos?</a>
+              <NavLink href='/'>¿Quiénes Somos?</NavLink>
             </li>
             <li>
-              <a href='/'>¿Quiénes Somos?</a>
+              <NavLink href='/'>¿Quiénes Somos?</NavLink>
             </li>
           </DesktopDiv>
           <Button
             ref={btn}
             type='button'
-            onClick={() => handleButton(containerRef, btn)}
+            onClick={() => handleButton(containerRef, btn, navbar)}
           >
             <FaBars className='navBtn' />
           </Button>
