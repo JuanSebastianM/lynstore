@@ -1,4 +1,4 @@
-import { Hero } from './components/Hero'
+import { Content } from './components/Content'
 import { Navbar } from './components/Navbar'
 import { createGlobalStyle } from 'styled-components'
 
@@ -62,7 +62,7 @@ function App() {
     <>
       <GlobalStyle />
       <Navbar />
-      <Hero />
+      <Content />
     </>
   )
 }
