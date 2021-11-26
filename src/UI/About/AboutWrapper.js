@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
 const Wrapper = styled.section`
-  min-height: 100%;
-  background-color: red;
+  min-height: 100vh;
   @media screen and (min-width: 1023px) {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
   }
 `
