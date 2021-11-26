@@ -5,11 +5,13 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
+  font-family: 'Cookie', cursive;
 }
 *, *::after, *::before {
   margin: 0;
   padding: 0;
   box-sizing: inherit;
+  letter-spacing: 2px;
 }
 li {
   list-style-type: none;
@@ -20,9 +22,17 @@ a {
   color: #000;
 }
 p {
-  margin-bottom: 15px;
-  font-size: 1.2rem;
-  line-height: 1.5;
+  margin-bottom: 10px;
+}
+h2 {
+  color: #000;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 10px;
+}
+p, a, li {
+  line-height: 1.2;
+  font-size: 1.8rem;
 }
 
 .active {
