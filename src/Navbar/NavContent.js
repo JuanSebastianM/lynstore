@@ -42,7 +42,7 @@ const NavContent = () => {
           <NavLink href='/'>¿Quiénes Somos?</NavLink>
         </li>
       </DesktopDiv>
-      <Img src={logo} alt='Local físico de LynStore' />
+      <Img src={logo} alt='Logo de LynStore' />
       <DesktopDiv>
         <li>
           <NavLink href='/'>¿Quiénes Somos?</NavLink>
