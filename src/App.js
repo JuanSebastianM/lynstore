@@ -22,9 +22,10 @@ a {
   color: #000;
 }
 p {
-  margin-bottom: 10px;
+  text-shadow: 0 1px #000;
 }
 h2 {
+  text-shadow: 1px 2px 20px rgb(255 255 255 / 50%);
   color: #000;
   font-size: 2.5rem;
   text-align: center;
@@ -66,7 +67,16 @@ p, a, li {
 .navbar-office .navBtn {
   filter: drop-shadow(0px 0px 1px #fff);
 }
+.big-diamond {
+  display: block;
+  color: #9daeb8;
+  font-size: 3em;
+  @media screen and (min-width: 1023px) {
+    font-size: 7rem;
+  }
+}
 `
+
 function App() {
   return (
     <>
