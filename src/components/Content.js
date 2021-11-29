@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 
 import Hero from '../UI/Hero/Hero'
 import About from '../UI/About/About'
+import Products from '../UI/Products/Products'
 
 const Wrapper = styled.main`
   width: 100%;
@@ -16,6 +17,7 @@ export const Content = () => {
       <Wrapper>
         <Hero />
         <About />
+        <Products />
       </Wrapper>
     </>
   )
