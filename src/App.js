@@ -25,17 +25,22 @@ p {
   text-shadow: 0 1px #000;
 }
 h2 {
-  text-shadow: 1px 2px 20px rgb(255 255 255 / 50%);
-  color: #000;
+  text-shadow: 10px 0 0 #54adb5;
+  color: #d4e0de;
   font-size: 2.5rem;
   text-align: center;
   margin-bottom: 10px;
+  @media screen and (min-width: 1023px) {
+    font-size: 3.5rem;
+  }
+}
+h3 {
+  font-size: 2rem;
 }
 p, a, li {
   line-height: 1.2;
   font-size: 1.8rem;
 }
-
 .active {
   transform: translateX(0);
 }
@@ -69,11 +74,14 @@ p, a, li {
 }
 .big-diamond {
   display: block;
-  color: #9daeb8;
+  color: #54adb5;
   font-size: 3em;
   @media screen and (min-width: 1023px) {
     font-size: 7rem;
   }
+}
+.product-img {
+  font-size: 4rem;
 }
 `
 
