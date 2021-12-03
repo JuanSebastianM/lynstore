@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import Administradores from '../UI/About/AboutPage/Administradores'
-import Informacion from '../UI/About/AboutPage/Information'
+import Informacion from '../UI/About/AboutPage/Informacion'
 
 const Wrapper = styled.main`
   width: 100%;
