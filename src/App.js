@@ -1,6 +1,8 @@
-import { Content } from './components/Content'
+// import { Content } from './components/Content'
 import { Navbar } from './components/Navbar'
 import { createGlobalStyle } from 'styled-components'
+import { Acerca } from './pages/Acerca'
+import { Footer } from './components/Footer'
 
 const GlobalStyle = createGlobalStyle`
 html {
@@ -25,7 +27,7 @@ p {
   text-shadow: 0 1px #000;
 }
 h2 {
-  text-shadow: 10px 0 0 #54adb5;
+  text-shadow: 3px 1px 0 #54adb5;
   color: #d4e0de;
   font-size: 2.5rem;
   text-align: center;
@@ -35,7 +37,14 @@ h2 {
   }
 }
 h3 {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #000;
+  width: 80%;
+  margin-bottom: 15px;
+  @media screen and (min-width: 1023px) {
+    text-align: center;
+    font-size: 2rem;
+  }
 }
 p, a, li {
   line-height: 1.2;
@@ -83,6 +92,39 @@ p, a, li {
 .product-img {
   font-size: 4rem;
 }
+.text-wrapper {
+  padding: 0 50px;
+}
+.centered-col-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  @media screen and (max-width: 1023px) {
+    margin-bottom: 20px;
+  }
+  @media screen and (min-width: 1023px) {
+    align-items: center;
+    height: 180px;
+    max-width: 250px;
+  }
+}
+.centered-col-div a, .centered-col-div p {
+  font-size: 1.4rem;
+  margin-bottom: 5px;
+  @media screen and (min-width: 1023px) {
+    font-size: 1.6rem;
+  }
+}
+.centered-col-div:last-of-type, .centered-col-div a:last-of-type, .centered-col-div p:last-of-type {
+  margin: 0;
+}
+.line {
+  width: 50%;
+  height: 2px;
+  background-color: #d4e0de;
+}
 `
 
 function App() {
@@ -90,7 +132,9 @@ function App() {
     <>
       <GlobalStyle />
       <Navbar />
-      <Content />
+      {/* <Content /> */}
+      <Acerca />
+      <Footer />
     </>
   )
 }
