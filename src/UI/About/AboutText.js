@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import { GiBigDiamondRing } from 'react-icons/gi'
 
@@ -16,6 +17,11 @@ const TextWrapper = styled.div`
   @media screen and (min-width: 1023px) {
     grid-template-columns: 120px 1fr;
   }
+`
+const NavContainer = styled.nav`
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const AboutText = () => {
@@ -36,6 +42,11 @@ const AboutText = () => {
         <GiBigDiamondRing className='big-diamond' />
         <p>Hacemos envíos a toda Colombia.</p>
       </TextWrapper>
+      <NavContainer>
+        <Link to='/acerca' className='know-more'>
+          Conocer más
+        </Link>
+      </NavContainer>
     </Container>
   )
 }
