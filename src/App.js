@@ -1,8 +1,11 @@
-// import { Content } from './components/Content'
+import { Routes, Route } from 'react-router-dom'
+
+import { Home } from './components/Home'
 import { Navbar } from './components/Navbar'
 import { createGlobalStyle } from 'styled-components'
 import { Acerca } from './pages/Acerca'
 import { Footer } from './components/Footer'
+import { Productos } from './pages/Productos'
 
 const GlobalStyle = createGlobalStyle`
 html {
@@ -20,6 +23,7 @@ li {
   padding: 5px 30px;
 }
 a {
+  width: 100%;
   text-decoration: none;
   color: #000;
 }
@@ -99,7 +103,6 @@ p, a, li {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  flex-wrap: wrap;
   width: 100%;
   @media screen and (max-width: 1023px) {
     margin-bottom: 20px;
@@ -120,10 +123,46 @@ p, a, li {
 .centered-col-div:last-of-type, .centered-col-div a:last-of-type, .centered-col-div p:last-of-type {
   margin: 0;
 }
+.links-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 150px;
+  width: 100%;
+  background-color: red;
+}
 .line {
   width: 50%;
   height: 2px;
   background-color: #d4e0de;
+}
+.know-more, .nav-link {
+  padding: 5px 20px;
+  border-radius: 30px;
+}
+.know-more {
+  background-color: rgb(84 173 181 / 14%);
+  border: 2px solid #54adb5;
+  width: 70%;
+  text-align: center;
+  transform: scale(1);
+  transition: transform 400ms ease;
+  &:hover {
+    background-color: transparent;
+  }
+  &:active {
+    transform: scale(0.8)
+  }
+}
+.nav-link {
+  color: #fff;
+  border: 2px solid transparent;
+  &:hover {
+    border: 2px solid #000;
+  }
+}
+.navlink-active {
+  font-weight: bolder;
+  border-bottom: 2px solid #fff;
 }
 `
 
@@ -132,8 +171,14 @@ function App() {
     <>
       <GlobalStyle />
       <Navbar />
-      {/* <Content /> */}
-      <Acerca />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='acerca' element={<Acerca />} />
+        <Route path='productos' element={<Productos />} />
+        {/* <Route path='contacto' element={<Contacto />} /> */}
+        {/* <Route path='preguntas-frecuentes' element={<PreguntasFrequentes />} /> */}
+        {/* <Route path='*' element={<Error />} /> */}
+      </Routes>
       <Footer />
     </>
   )
