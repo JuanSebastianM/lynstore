@@ -1,5 +1,7 @@
 // import styled from 'styled-components'
 
+import { Link } from 'react-router-dom'
+
 const FooterLinks = () => {
   return (
     <>
@@ -7,12 +9,12 @@ const FooterLinks = () => {
         <header>
           <h3>Enlaces</h3>
         </header>
-        <div className='centered-col-div'>
-          <a href='/'>Visitar Tienda</a>
-          <a href='/'>¿Quiénes Somos?</a>
-          <a href='/'>Productos</a>
-          <a href='/'>Contacto</a>
-          <a href='/'>Preguntas Frecuentes</a>
+        <div className='links-grid'>
+          <Link to='/'>Visitar Tienda</Link>
+          <Link to='/acerca'>¿Quiénes Somos?</Link>
+          <Link to='/productos'>Productos</Link>
+          <Link to='/contacto'>Contacto</Link>
+          <Link to='/preguntas-frecuentes'>Preguntas Frecuentes</Link>
         </div>
       </div>
     </>
