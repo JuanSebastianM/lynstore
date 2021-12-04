@@ -1,14 +1,7 @@
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import logo from '../images/logo.png'
 
-const NavLink = styled.a`
-  color: #d4e0de;
-  padding: 5px 10px;
-  border: 2px solid transparent;
-  &:hover {
-    border: 2px solid #000;
-  }
-`
 const DesktopDiv = styled.div`
   display: none;
   @media screen and (min-width: 1023px) {
@@ -36,19 +29,39 @@ const NavContent = () => {
     <>
       <DesktopDiv>
         <li>
-          <NavLink href='/'>¿Quiénes Somos?</NavLink>
+          <NavLink
+            to='/acerca'
+            className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+          >
+            ¿Quiénes Somos?
+          </NavLink>
         </li>
         <li>
-          <NavLink href='/'>¿Quiénes Somos?</NavLink>
+          <NavLink
+            to='/productos'
+            className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+          >
+            Productos
+          </NavLink>
         </li>
       </DesktopDiv>
       <Img src={logo} alt='Logo de LynStore' />
       <DesktopDiv>
         <li>
-          <NavLink href='/'>¿Quiénes Somos?</NavLink>
+          <NavLink
+            to='/contacto'
+            className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+          >
+            Contacto
+          </NavLink>
         </li>
         <li>
-          <NavLink href='/'>¿Quiénes Somos?</NavLink>
+          <NavLink
+            to='/preguntas-frecuentes'
+            className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+          >
+            Preguntas Frecuentes
+          </NavLink>
         </li>
       </DesktopDiv>
     </>
