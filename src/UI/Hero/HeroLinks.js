@@ -11,9 +11,6 @@ const LinkBtn = styled.a`
   border: 2px solid transparent;
   transform: scale(1);
   transition: all 500ms ease;
-  @media screen and (min-width: 1023px) {
-    width: 180px;
-  }
   &:hover {
     color: #000;
     background-color: transparent;
@@ -21,13 +18,6 @@ const LinkBtn = styled.a`
   }
   &:active {
     transform: scale(0.8);
-  }
-`
-const AboutUsBtn = styled(LinkBtn)`
-  background-color: #d4e0de;
-  color: #000;
-  &:hover {
-    color: #d4e0de;
   }
 `
 const Wrapper = styled.div`
@@ -40,7 +30,6 @@ const HeroLinks = () => {
     <>
       <Wrapper>
         <LinkBtn>Comprar</LinkBtn>
-        <AboutUsBtn>Conocer más</AboutUsBtn>
       </Wrapper>
     </>
   )
