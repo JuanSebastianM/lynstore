@@ -1,3 +1,4 @@
+import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
 import Administradores from '../UI/About/AboutPage/Administradores'
 import Informacion from '../UI/About/AboutPage/Informacion'
@@ -46,6 +47,7 @@ export const Acerca = () => {
             }
           />
         </Container>
+        <Outlet />
       </Wrapper>
     </>
   )
