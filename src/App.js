@@ -127,8 +127,7 @@ p, a, li {
       &:hover{
         background-size: 100% 0.1em;
       }
-}
-
+    }
 }
 .flex-links a, .flex-contacts p {
   font-size: 1.4rem;
