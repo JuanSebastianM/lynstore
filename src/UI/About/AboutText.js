@@ -6,6 +6,9 @@ const Container = styled.div`
   margin: 0 auto;
   max-width: 460px;
   width: 80%;
+  @media screen and (max-width: 1023px) {
+    padding-bottom: 30px;
+  }
 `
 const TextWrapper = styled.div`
   display: grid;
