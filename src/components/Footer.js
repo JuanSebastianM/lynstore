@@ -6,6 +6,7 @@ import FooterSocials from '../UI/Footer/FooterSocials'
 
 const Container = styled.footer`
   display: flex;
+  padding: 20px 0;
   justify-content: space-evenly;
   align-items: center;
   @media screen and (max-width: 1023px) {
