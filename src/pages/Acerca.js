@@ -1,4 +1,3 @@
-import { Outlet } from 'react-router-dom'
 import styled from 'styled-components'
 import Administradores from '../UI/About/AboutPage/Administradores'
 import Informacion from '../UI/About/AboutPage/Informacion'
@@ -8,10 +7,12 @@ const Wrapper = styled.main`
   min-height: 100vh;
   background-color: #d4e0de;
 `
-
 const Container = styled.section`
   min-height: 100vh;
   padding-top: 100px;
+  @media screen and (max-width: 1023px) {
+    padding-bottom: 30px;
+  }
   @media screen and (min-width: 1023px) {
     display: grid;
     grid-template-columns: 1fr 400px 400px;
@@ -47,7 +48,6 @@ export const Acerca = () => {
             }
           />
         </Container>
-        <Outlet />
       </Wrapper>
     </>
   )
