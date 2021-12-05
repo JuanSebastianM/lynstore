@@ -1,4 +1,4 @@
-import React from 'react'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 
 const OuterContainer = styled.div`
@@ -14,7 +14,7 @@ const OuterContainer = styled.div`
 const Container = styled.div`
   box-shadow: 8px 1px 20px 0px rgba(0, 0, 0, 0.6);
   padding-top: 100px;
-  width: 60%;
+  width: 80%;
   min-height: 100vh;
 `
 const SideDiv = styled.div`
@@ -22,13 +22,10 @@ const SideDiv = styled.div`
   width: 40%;
   min-height: 100vh;
 `
-const Wrapper = styled.ul``
 const List = styled.li`
   margin-bottom: 20px;
 `
-const Link = styled.a`
-  color: #000;
-`
+
 export const SideMenu = ({ menuRef, contRef, btnRef }) => {
   const hideSideMenu = () => {
     if (contRef.current.classList.contains('active')) {
@@ -39,20 +36,48 @@ export const SideMenu = ({ menuRef, contRef, btnRef }) => {
   return (
     <OuterContainer ref={contRef}>
       <Container className='navbar-office' ref={menuRef}>
-        <Wrapper>
+        <ul>
           <List>
-            <Link href='/'>Inicio</Link>
+            <NavLink
+              to='/acerca'
+              className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+            >
+              Inicio
+            </NavLink>
           </List>
           <List>
-            <Link href='/'>¿Quiénes Somos?</Link>
+            <NavLink
+              to='/acerca'
+              className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+            >
+              ¿Quiénes Somos?
+            </NavLink>
           </List>
           <List>
-            <Link href='/'>¿Quiénes Somos?</Link>
+            <NavLink
+              to='/productos'
+              className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+            >
+              Productos
+            </NavLink>
           </List>
           <List>
-            <Link href='/'>¿Quiénes Somos?</Link>
+            <NavLink
+              to='/contacto'
+              className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+            >
+              Contacto
+            </NavLink>
           </List>
-        </Wrapper>
+          <List>
+            <NavLink
+              to='/preguntas-frecuentes'
+              className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+            >
+              Preguntas Frecuentes
+            </NavLink>
+          </List>
+        </ul>
       </Container>
       <SideDiv onClick={hideSideMenu}></SideDiv>
     </OuterContainer>
