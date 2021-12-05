@@ -6,7 +6,7 @@ const Administradores = ({ name, info }) => {
           <div className='text-wrapper'>
             <h2>{name}</h2>
             {/* <img src={picture} href={name} /> */}
-            <p>{info}</p>
+            {info}
           </div>
         </main>
       </article>
