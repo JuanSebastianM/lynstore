@@ -1,7 +1,7 @@
 const FooterSocials = () => {
   return (
     <>
-      <div className='centered-col-div'>
+      <div className='flex-contacts'>
         <header>
           <h3>Contactos</h3>
         </header>
