@@ -10,6 +10,7 @@ import { Productos } from './pages/Productos'
 const GlobalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
+  scroll-behavior: smooth;
   font-family: 'Cookie', cursive;
 }
 *, *::after, *::before {
@@ -43,7 +44,6 @@ h2 {
 h3 {
   font-size: 1.5rem;
   border-bottom: 2px solid #000;
-  width: 80%;
   margin-bottom: 15px;
   @media screen and (min-width: 1023px) {
     text-align: center;
@@ -99,36 +99,80 @@ p, a, li {
 .text-wrapper {
   padding: 0 50px;
 }
-.centered-col-div {
+.flex-links, .flex-contacts {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   width: 100%;
   @media screen and (max-width: 1023px) {
     margin-bottom: 20px;
   }
   @media screen and (min-width: 1023px) {
-    align-items: center;
     height: 180px;
-    max-width: 250px;
+    max-width: 400px;
   }
 }
-.centered-col-div a, .centered-col-div p {
+.flex-contacts {
+  @media screen and (min-width: 1023px) {
+    max-width: 180px;
+  }
+}
+.flex-links a {
+  width: fit-content;
+  @media screen and (min-width: 1023px) {
+      background-image: linear-gradient(45deg, #d4e0de 5%, #000 80%);
+      background-size: 0% 0.1em;
+      background-position: 0% 80%;
+      background-repeat: no-repeat;
+        transition: background-size 300ms ease;
+      &:hover{
+        background-size: 100% 0.1em;
+      }
+}
+
+}
+.flex-links a, .flex-contacts p {
   font-size: 1.4rem;
   margin-bottom: 5px;
   @media screen and (min-width: 1023px) {
     font-size: 1.6rem;
   }
 }
-.centered-col-div:last-of-type, .centered-col-div a:last-of-type, .centered-col-div p:last-of-type {
+.flex-links:last-of-type, .flex-contacts:last-of-type, .flex-links a:last-of-type, .flex-contacts p:last-of-type {
   margin: 0;
+}
+.flex-links header, .flex-contacts header {
+  @media screen and (min-width: 1023px) {
+    margin: 0 auto;
+  }
+  width: 80%;
 }
 .links-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 150px;
+  @media screen and (min-width: 1023px) {
+   grid-template-columns: 1fr 1fr;
+    height: 150px;
+  }
   width: 100%;
-  background-color: red;
+}
+.desktop-order-2 {
+  @media screen and (min-width: 1023px) {
+    order: 2;
+  }
+}
+.desktop-order-3 {
+  @media screen and (min-width: 1023px) {
+    order: 3;
+  }
+}
+.desktop-order-4 {
+  @media screen and (min-width: 1023px) {
+    order: 4;
+  }
+}
+.desktop-order-5 {
+  @media screen and (min-width: 1023px) {
+    order: 5;
+  }
 }
 .line {
   width: 50%;
