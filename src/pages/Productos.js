@@ -7,6 +7,10 @@ const Container = styled.section`
   background-size: cover;
   background-repeat: no-repeat;
   width: 100%;
+  padding-top: 100px;
+  @media screen and (max-width: 1023px) {
+    padding-bottom: 30px;
+  }
   min-height: 100vh;
 `
 
