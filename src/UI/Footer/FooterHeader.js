@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
 import logo from '../../images/logo.png'
 
@@ -25,7 +26,9 @@ const FooterHeader = () => {
       <Container>
         <div className='line'></div>
         <header>
-          <Logo src={logo} alt='LynStore logo' />
+          <Link to='/'>
+            <Logo src={logo} alt='LynStore logo' />
+          </Link>
         </header>
         <div className='line'></div>
       </Container>
