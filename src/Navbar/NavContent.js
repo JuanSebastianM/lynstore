@@ -1,4 +1,4 @@
-import { NavLink } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import logo from '../images/logo.png'
 
@@ -45,7 +45,9 @@ const NavContent = () => {
           </NavLink>
         </li>
       </DesktopDiv>
-      <Img src={logo} alt='Logo de LynStore' />
+      <Link to='/'>
+        <Img src={logo} alt='Logo de LynStore' />
+      </Link>
       <DesktopDiv>
         <li>
           <NavLink
