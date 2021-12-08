@@ -32,9 +32,9 @@ p {
   text-shadow: 0 1px #000;
 }
 h2 {
-  text-shadow: 3px 1px 0 #54adb5;
-  color: #d4e0de;
-  font-size: 2.5rem;
+  text-shadow: 3px 1px 0 #000;
+  color: #ffd3d3;
+  font-size: 2rem;
   text-align: center;
   margin-bottom: 10px;
   @media screen and (min-width: 1023px) {
@@ -85,6 +85,20 @@ p, a, li {
 .navbar-office .navBtn {
   filter: drop-shadow(0px 0px 1px #fff);
 }
+.styled-span {
+  color: #ffd3d3;
+  text-shadow: 2px 1px 0px #54adb5;
+  background-image: linear-gradient(120deg, #000 0%, #000 100%);
+  background-repeat: no-repeat;
+  background-size: 100% 0.2em;
+  background-position: 0% 88%;
+  transition: all 500ms ease;
+  &:hover {
+    text-shadow: none;
+    background-size: 100% 88%;
+  }
+  border-radius: 50%;
+}
 .big-diamond {
   display: block;
   color: #54adb5;
@@ -93,11 +107,16 @@ p, a, li {
     font-size: 7rem;
   }
 }
-.product-img {
-  font-size: 4rem;
+.about-articles {
+  @media screen and (max-width: 1023px) {
+    margin-bottom: 15px;
+  }
 }
 .text-wrapper {
   padding: 0 50px;
+}
+.text-wrapper p {
+  margin-bottom: 10px;
 }
 .flex-links, .flex-contacts {
   display: flex;
@@ -107,13 +126,17 @@ p, a, li {
     margin-bottom: 20px;
   }
   @media screen and (min-width: 1023px) {
-    height: 180px;
     max-width: 400px;
   }
 }
 .flex-contacts {
   @media screen and (min-width: 1023px) {
-    max-width: 180px;
+    max-width: 380px;
+  }
+}
+.scroll-a {
+  @media screen and (max-width: 1023px) {
+    overflow-x: scroll;
   }
 }
 .flex-links a {
@@ -129,14 +152,13 @@ p, a, li {
       }
     }
 }
-.flex-links a, .flex-contacts p {
+.flex-links a, .flex-contacts p, .flex-contacts a {
   font-size: 1.4rem;
-  margin-bottom: 5px;
   @media screen and (min-width: 1023px) {
     font-size: 1.6rem;
   }
 }
-.flex-links:last-of-type, .flex-contacts:last-of-type, .flex-links a:last-of-type, .flex-contacts p:last-of-type {
+.flex-links:last-of-type, .flex-contacts:last-of-type {
   margin: 0;
 }
 .flex-links header, .flex-contacts header {
@@ -206,6 +228,28 @@ p, a, li {
 .navlink-active {
   font-weight: bolder;
   border-bottom: 2px solid #fff;
+}
+.product-div h3 {
+  text-transform: uppercase;
+  padding: 5px 20px;
+  text-align: center;
+}
+.product-div a {
+  display: block;
+  padding: 0 20px;
+  background-color: red;
+  text-align: center;
+}
+.product-div a:hover span {
+  transform: translateX(20px);
+}
+.heart {
+  color: #ffd3d3;
+}
+.flex-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 `
 
