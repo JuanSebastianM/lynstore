@@ -62,13 +62,13 @@ p, a, li {
 }
 .navBtn {
   transform-origin: center;
-  color: #d4e0de;
+  color: #ffd3d3;
   filter: drop-shadow(0px 0px 1px #000);
   border-radius: 20% 90% 0% 100%;
   transition: all 500ms ease;
 }
 .navbar-office {
-  background-color: #d4e0de;
+  background-color: #ffd3d3;
   box-shadow: 0px 2px 10px #000;
   @media screen and (min-width: 1023px) {
     height: 80px;
@@ -86,14 +86,15 @@ p, a, li {
   filter: drop-shadow(0px 0px 1px #fff);
 }
 .styled-span {
-  color: #ffd3d3;
-  text-shadow: 2px 1px 0px #54adb5;
+  color: #000;
+  text-shadow: 2px 1px 0px #ffd3d3;
   background-image: linear-gradient(120deg, #000 0%, #000 100%);
   background-repeat: no-repeat;
   background-size: 100% 0.2em;
   background-position: 0% 88%;
   transition: all 500ms ease;
   &:hover {
+    color: #ffd3d3;
     text-shadow: none;
     background-size: 100% 88%;
   }
@@ -109,11 +110,17 @@ p, a, li {
 }
 .about-articles {
   @media screen and (max-width: 1023px) {
-    margin-bottom: 15px;
+    margin-bottom: 35px;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
   }
 }
 .text-wrapper {
-  padding: 0 50px;
+  padding: 0 30px;
+  @media screen and (min-width: 1023px) {
+    padding: 0 50px;
+  }
 }
 .text-wrapper p {
   margin-bottom: 10px;
@@ -131,7 +138,7 @@ p, a, li {
 }
 .flex-contacts {
   @media screen and (min-width: 1023px) {
-    max-width: 380px;
+    max-width: 370px;
   }
 }
 .scroll-a {
@@ -140,7 +147,6 @@ p, a, li {
   }
 }
 .flex-links a {
-  width: fit-content;
   @media screen and (min-width: 1023px) {
       background-image: linear-gradient(45deg, #d4e0de 5%, #000 80%);
       background-size: 0% 0.1em;
@@ -152,7 +158,9 @@ p, a, li {
       }
     }
 }
-.flex-links a, .flex-contacts p, .flex-contacts a {
+.flex-links a, footer span, .flex-contacts a {
+  display: block;
+  width: fit-content;
   font-size: 1.4rem;
   @media screen and (min-width: 1023px) {
     font-size: 1.6rem;
