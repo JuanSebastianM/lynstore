@@ -45,7 +45,7 @@ const NavContent = () => {
           </NavLink>
         </li>
       </DesktopDiv>
-      <Link to='/'>
+      <Link to='/' css={`width: auto;`}>
         <Img src={logo} alt='Logo de LynStore' />
       </Link>
       <DesktopDiv>
