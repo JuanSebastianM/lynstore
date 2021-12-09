@@ -25,8 +25,8 @@ const FooterContacts = () => {
         <GridWrapper>
           <MdOutlineLocationOn />
           <div>
-            <p>Sincelejo, Sucre, El Cortijo</p>
-            <p>Kra 6a #29b 14</p>
+            <span>Sincelejo, Sucre, El Cortijo</span>
+            <span>Kra 6a #29b 14</span>
           </div>
         </GridWrapper>
         <GridWrapper>
@@ -42,6 +42,7 @@ const FooterContacts = () => {
         <GridWrapper>
           <MdOutlineEmail />
           <a
+            className='scroll-a'
             href='mailto:atencionalclientelynstore@gmail.com'
             target='_blank'
             rel='noopener noreferrer'
