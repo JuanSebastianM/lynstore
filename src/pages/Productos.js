@@ -17,9 +17,11 @@ const Container = styled.section`
 `
 const BackgroundImage = styled.img`
   position: absolute;
+  z-index: -6;
   top: 0;
   right: 0;
   width: 100%;
+  height: 100%;
   object-fit: contain;
 `
 
