@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Container = styled.div`
   border-top: 2px solid #000;
@@ -6,14 +6,24 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px 0;
-`
+`;
 
 const FooterExtra = () => {
-  let currentYear = new Date().getFullYear()
+  let currentYear = new Date().getFullYear();
   return (
     <Container>
-      <span>&copy; 2016 - {currentYear}</span>
+      <p>
+        LynStore &copy; {currentYear}. Sitio desarrollado por{' '}
+        <a
+          className='developer'
+          href='https://juansebastianm.github.io/portfolio'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
+          Juan Mendoza
+        </a>
+      </p>
     </Container>
-  )
-}
-export default FooterExtra
+  );
+};
+export default FooterExtra;
