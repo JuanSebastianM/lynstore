@@ -1,11 +1,11 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom';
 
-import { Home } from './components/Home'
-import { Navbar } from './components/Navbar'
-import { createGlobalStyle } from 'styled-components'
-import { Acerca } from './pages/Acerca'
-import { Footer } from './components/Footer'
-import { Productos } from './pages/Productos'
+import { Home } from './components/Home';
+import { Navbar } from './components/Navbar';
+import { createGlobalStyle } from 'styled-components';
+import { Acerca } from './pages/Acerca';
+import { Footer } from './components/Footer';
+import { Productos } from './pages/Productos';
 
 const GlobalStyle = createGlobalStyle`
 html {
@@ -84,6 +84,9 @@ p, a, li {
 }
 .navbar-office .navBtn {
   filter: drop-shadow(0px 0px 1px #fff);
+}
+.sidemenu-link {
+  font-size: 1.6rem;
 }
 .styled-span {
   color: #000;
@@ -237,18 +240,27 @@ p, a, li {
   font-weight: bolder;
   border-bottom: 2px solid #fff;
 }
+.product-div {
+  z-index: 1;
+}
 .product-div h3 {
-  text-transform: uppercase;
+  padding: 10px 20px;
+  text-align: center;
+  background-color: #faebd7;
+  border: none;
+}
+.product-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 5px 20px;
-  text-align: center;
+  background-color: #faebd7;
 }
-.product-div a {
-  display: block;
-  padding: 0 20px;
-  background-color: red;
-  text-align: center;
+.product-link svg {
+  transform: translateX(0px);
+  transition: transform 0.5s ease-in-out;
 }
-.product-div a:hover span {
+.product-link:hover svg {
   transform: translateX(20px);
 }
 .heart {
@@ -259,7 +271,15 @@ p, a, li {
   justify-content: center;
   align-items: center;
 }
-`
+.styled-svg {
+  position: absolute;
+  bottom: 0;
+}
+.developer {
+  color: #ffd3d3;
+  font-weight: bolder;
+}
+`;
 
 function App() {
   return (
@@ -276,7 +296,7 @@ function App() {
       </Routes>
       <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
