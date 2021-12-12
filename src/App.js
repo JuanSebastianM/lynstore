@@ -299,6 +299,10 @@ p, a, li {
 .developer {
   font-weight: bolder;
 }
+.styled-form {
+  text-align: center;
+  padding: 0 30px;
+}
 .styled-form * {
   font-size: 1.4rem;
   @media screen and (min-width: 1023px) {
@@ -306,14 +310,17 @@ p, a, li {
   }
 }
 .styled-form label {
+  width: fit-content;
+  margin-top: 10px;
   margin-bottom: 10px;
   display: block;
 }
-.styled-form input {
+.styled-form input, .styled-form textarea {
   background-color: #ffd3d3;
   border: 1px solid transparent;
   border-radius: 5px;
   padding: 8px 10px;
+  width: 100%;
   transition: border-color 300ms ease;
   &:hover {
     border-color: #000;
@@ -327,6 +334,25 @@ p, a, li {
   @media screen and (min-width: 1023px) {
     gap: 40px;
   }
+}
+.styled-form .form-names label {
+  margin-top: 0;
+}
+.styled-form textarea {
+  height: 120px;
+}
+.required:after {
+  content: '*';
+  color: #ff0000;
+  font-weight: bolder;
+}
+.form-paragraph {
+  margin-top: 10px;
+  font-size: 1.2rem;
+}
+.form-paragraph span {
+  color: #ff0000;
+  font-weight: bolder;
 }
 `;
 
