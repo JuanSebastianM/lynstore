@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 import ContactForm from '../UI/Contact/ContactForm';
-import ContactForm from '../UI/Contact/ContactSocials';
+import ContactSocials from '../UI/Contact/ContactSocials';
 
 const Container = styled.div`
   min-height: 100vh;
