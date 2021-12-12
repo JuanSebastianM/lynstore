@@ -1,19 +1,20 @@
 import { Routes, Route } from 'react-router-dom';
+import { createGlobalStyle } from 'styled-components';
 
 import { Home } from './components/Home';
 import { Navbar } from './components/Navbar';
-import { createGlobalStyle } from 'styled-components';
 import { Acerca } from './pages/Acerca';
 import { Footer } from './components/Footer';
 import { Productos } from './pages/Productos';
+import { Contacto } from './pages/Contacto';
 
 const GlobalStyle = createGlobalStyle`
 html {
   box-sizing: border-box;
   scroll-behavior: smooth;
-  font-family: 'Cookie', cursive;
 }
 *, *::after, *::before {
+  font-family: 'Cookie', cursive;
   margin: 0;
   padding: 0;
   box-sizing: inherit;
@@ -120,9 +121,10 @@ p, a, li {
   }
 }
 .text-wrapper {
+  background-image: linear-gradient(0deg, #ffd3d336, #ffd3d336);
   padding: 0 30px;
   @media screen and (min-width: 1023px) {
-    padding: 0 50px;
+    padding: 0 40px;
   }
 }
 .text-wrapper p {
@@ -144,12 +146,21 @@ p, a, li {
     max-width: 370px;
   }
 }
-.scroll-a {
+.flex-extra {
+  border-top: 2px solid #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 0;
+  text-align: center;
+}
+.flex-contacts .scroll-a {
   @media screen and (max-width: 1023px) {
+    width: auto;
     overflow-x: scroll;
   }
 }
-.flex-links a {
+.flex-links a, .flex-contacts a, .flex-extra a {
   @media screen and (min-width: 1023px) {
       background-image: linear-gradient(45deg, #d4e0de 5%, #000 80%);
       background-size: 0% 0.1em;
@@ -161,13 +172,20 @@ p, a, li {
       }
     }
 }
-.flex-links a, footer span, .flex-contacts a {
+.flex-links a, footer span, .flex-contacts a, .flex-extra p, .flex-extra a {
   display: block;
   width: fit-content;
   font-size: 1.4rem;
   @media screen and (min-width: 1023px) {
     font-size: 1.6rem;
   }
+}
+.flex-extra a {
+  display: inline;
+}
+.flex-extra p .copyright {
+  display: inline;
+  font-family: 'Times New Roman', cursive;
 }
 .flex-links:last-of-type, .flex-contacts:last-of-type {
   margin: 0;
@@ -180,6 +198,9 @@ p, a, li {
 }
 .links-grid {
   display: grid;
+  @media screen and (max-width: 1023px) {
+    grid-gap: 10px;
+  }
   @media screen and (min-width: 1023px) {
    grid-template-columns: 1fr 1fr;
     height: 150px;
@@ -276,8 +297,36 @@ p, a, li {
   bottom: 0;
 }
 .developer {
-  color: #ffd3d3;
   font-weight: bolder;
+}
+.styled-form * {
+  font-size: 1.4rem;
+  @media screen and (min-width: 1023px) {
+    font-size: 1.6rem;
+  }
+}
+.styled-form label {
+  margin-bottom: 10px;
+  display: block;
+}
+.styled-form input {
+  background-color: #ffd3d3;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 8px 10px;
+  transition: border-color 300ms ease;
+  &:hover {
+    border-color: #000;
+  }
+}
+.styled-form .form-names {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  @media screen and (min-width: 1023px) {
+    gap: 40px;
+  }
 }
 `;
 
@@ -290,7 +339,7 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='acerca' element={<Acerca />} />
         <Route path='productos' element={<Productos />} />
-        {/* <Route path='contacto' element={<Contacto />} /> */}
+        <Route path='contacto' element={<Contacto />} />
         {/* <Route path='preguntas-frecuentes' element={<PreguntasFrequentes />} /> */}
         {/* <Route path='*' element={<Error />} /> */}
       </Routes>
