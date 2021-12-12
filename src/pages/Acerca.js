@@ -1,21 +1,22 @@
-import styled from 'styled-components'
-import Administradores from '../UI/About/AboutPage/Administradores'
-import Informacion from '../UI/About/AboutPage/Informacion'
-import juand from '../images/juand.jpg'
-import karolyn from '../images/karolyn.jpg'
+import styled from 'styled-components';
+import Administradores from '../UI/About/AboutPage/Administradores';
+import Informacion from '../UI/About/AboutPage/Informacion';
+import juand from '../images/juand.jpg';
+import karolyn from '../images/karolyn.jpg';
 
 const Wrapper = styled.main`
+  background-image: url('https://res.cloudinary.com/dmhhz7iam/image/upload/v1639258362/grid-1s-1084px_nmljfv.png');
   padding: 100px 0 30px;
   width: 100%;
   min-height: 100vh;
-`
+`;
 const AdminsWrapper = styled.div`
   margin-top: 30px;
   @media screen and (min-width: 1023px) {
     display: flex;
     justify-content: space-evenly;
   }
-`
+`;
 
 export const Acerca = () => {
   return (
@@ -67,5 +68,5 @@ export const Acerca = () => {
         </section>
       </Wrapper>
     </>
-  )
-}
+  );
+};
