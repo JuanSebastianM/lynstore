@@ -11,6 +11,7 @@ const Section = styled.section`
   padding: 0 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
   gap: 40px;
   @media screen and (min-width: 1023px) {
