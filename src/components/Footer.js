@@ -6,7 +6,7 @@ import FooterContacts from '../UI/Footer/FooterContacts';
 import FooterExtra from '../UI/Footer/FooterExtra';
 
 const Container = styled.footer`
-  background-color: #faebd7;
+  background-color: #ffe9e9;
   display: flex;
   padding-top: 20px;
   justify-content: space-evenly;
