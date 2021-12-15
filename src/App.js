@@ -230,7 +230,7 @@ p, a, li {
 .line {
   width: 50%;
   height: 2px;
-  background-color: #d4e0de;
+  background-color: #ffd3d3;
 }
 .know-more, .nav-link {
   padding: 5px 20px;
@@ -267,7 +267,6 @@ p, a, li {
 .product-div h3 {
   padding: 10px 20px;
   text-align: center;
-  background-color: #faebd7;
   border: none;
 }
 .product-link {
@@ -275,7 +274,9 @@ p, a, li {
   justify-content: center;
   align-items: center;
   padding: 5px 20px;
-  background-color: #faebd7;
+}
+.product-div h3, .product-link {
+  background-color: #ffe9e9;
 }
 .product-link svg {
   transform: translateX(0px);
@@ -285,6 +286,7 @@ p, a, li {
   transform: translateX(20px);
 }
 .heart {
+  filter: drop-shadow(0 2px 2px #000);
   color: #ffd3d3;
 }
 .flex-div {
@@ -303,7 +305,7 @@ p, a, li {
   text-align: center;
   padding: 0 30px;
 }
-.styled-form * {
+.styled-form *, .socials li svg, .socials li a {
   font-size: 1.4rem;
   @media screen and (min-width: 1023px) {
     font-size: 1.6rem;
@@ -334,6 +336,14 @@ p, a, li {
   @media screen and (min-width: 1023px) {
     gap: 40px;
   }
+}
+.styled-form .form-names div {
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+}
+.socials {
+  text-align: center;
 }
 .styled-form .form-names label {
   margin-top: 0;
