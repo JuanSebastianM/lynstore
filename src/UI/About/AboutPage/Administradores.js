@@ -23,27 +23,27 @@ const Administradores = ({ name, picture, info }) => {
   return (
     <>
       <article className='about-articles'>
-          <header>
-            <h2>{name}</h2>
-          </header>
-          <div className='flex-div'>
-            <div className='line'></div>
-            <Logo src={logo} alt='LynStore logo' />
-            <div className='line'></div>
-          </div>
-          <Picture src={picture} alt={name} />
-          <div className='flex-div'>
-            <div className='line'></div>
-            <Logo src={logo} alt='LynStore logo' />
-            <div className='line'></div>
-          </div>
-          <div className='text-wrapper'>
-            {info}
-            <p>
-              En LynStore tú eres lo más importante{' '}
-              <BsSuitHeartFill className='red-heart' />.
-            </p>
-          </div>
+        <header>
+          <h2>{name}</h2>
+        </header>
+        <div className='flex-div'>
+          <div className='line'></div>
+          <Logo src={logo} alt='LynStore logo' />
+          <div className='line'></div>
+        </div>
+        <Picture src={picture} alt={name} />
+        <div className='flex-div'>
+          <div className='line'></div>
+          <Logo src={logo} alt='LynStore logo' />
+          <div className='line'></div>
+        </div>
+        <div className='text-wrapper'>
+          {info}
+          <p>
+            En LynStore tú eres lo más importante{' '}
+            <BsSuitHeartFill className='heart' />.
+          </p>
+        </div>
       </article>
     </>
   );
