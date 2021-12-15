@@ -25,7 +25,7 @@ const Wrapper = styled.div`
   box-shadow: 4px 4px 5px -4px #000;
   background-color: #fff;
   width: 100%;
-  height: 200px;
+  height: 230px;
   transition: all 500ms ease;
   transform-origin: center -20px;
   transform: rotate(0deg);
