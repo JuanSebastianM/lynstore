@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-import { MdOutlineLocationOn, MdOutlineEmail } from 'react-icons/md'
-import { BsWhatsapp, BsInstagram } from 'react-icons/bs'
+import { MdOutlineLocationOn, MdOutlineEmail } from 'react-icons/md';
+import { BsWhatsapp, BsInstagram } from 'react-icons/bs';
 
 const GridWrapper = styled.div`
   overflow: hidden;
@@ -13,7 +13,7 @@ const GridWrapper = styled.div`
   &:last-of-type {
     margin: 0;
   }
-`
+`;
 
 const FooterContacts = () => {
   return (
@@ -32,7 +32,7 @@ const FooterContacts = () => {
         <GridWrapper>
           <BsWhatsapp />
           <a
-            href='https://wa.me/3008769307'
+            href='https://wa.me/573008769307'
             target='_blank'
             rel='noopener noreferrer'
           >
@@ -62,6 +62,6 @@ const FooterContacts = () => {
         </GridWrapper>
       </div>
     </>
-  )
-}
-export default FooterContacts
+  );
+};
+export default FooterContacts;
