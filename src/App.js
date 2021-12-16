@@ -345,6 +345,13 @@ p, a, li {
 .socials {
   text-align: center;
 }
+.socials a span {
+  text-decoration: underline transparent;
+  transition: text-decoration 400ms ease;
+}
+.socials a:hover span {
+  text-decoration: underline #000;
+}
 .styled-form .form-names label {
   margin-top: 0;
 }
