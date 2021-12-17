@@ -7,6 +7,7 @@ import { Acerca } from './pages/Acerca';
 import { Footer } from './components/Footer';
 import { Productos } from './pages/Productos';
 import { Contacto } from './pages/Contacto';
+import { PreguntasFrecuentes } from './pages/PreguntasFrecuentes';
 
 const GlobalStyle = createGlobalStyle`
 html {
@@ -383,7 +384,7 @@ function App() {
         <Route path='acerca' element={<Acerca />} />
         <Route path='productos' element={<Productos />} />
         <Route path='contacto' element={<Contacto />} />
-        {/* <Route path='preguntas-frecuentes' element={<PreguntasFrequentes />} /> */}
+        <Route path='preguntas-frecuentes' element={<PreguntasFrecuentes />} />
         {/* <Route path='*' element={<Error />} /> */}
       </Routes>
       <Footer />
