@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ContactForm from '../UI/Contact/ContactForm';
 import ContactSocials from '../UI/Contact/ContactSocials';
 
-const Container = styled.div`
+const Container = styled.main`
   min-height: 100vh;
   padding: 100px 0;
 `;
