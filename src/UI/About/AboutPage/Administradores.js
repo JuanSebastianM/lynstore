@@ -10,12 +10,17 @@ const Logo = styled.img`
     width: 100px;
   }
 `;
-const Picture = styled.img`
-  display: block;
-  border: 10px solid #ffe6ed;
-  margin: 0 auto;
-  max-width: 100%;
+const PictureWrapper = styled.div`
   width: 150px;
+  height: 225px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 10px solid #ffe6ed;
+`;
+
+const Picture = styled.img`
+  margin: 0 auto;
+  width: 100%;
   object-fit: contain;
 `;
 
@@ -31,7 +36,9 @@ const Administradores = ({ name, picture, info }) => {
           <Logo src={logo} alt='LynStore logo' />
           <div className='line'></div>
         </div>
-        <Picture src={picture} alt={name} />
+        <PictureWrapper>
+          <Picture src={picture} alt={name} />
+        </PictureWrapper>
         <div className='flex-div'>
           <div className='line'></div>
           <Logo src={logo} alt='LynStore logo' />
