@@ -1,15 +1,13 @@
-import { Link, NavLink } from 'react-router-dom'
-import styled from 'styled-components/macro'
-import logo from '../images/logo.png'
+import { Link, NavLink } from 'react-router-dom';
+import styled from 'styled-components/macro';
+import logo from '../images/logo.png';
 
-const DesktopDiv = styled.div`
-  display: none;
-  @media screen and (min-width: 1023px) {
-    display: flex;
+const DesktopList = styled.li`
+  @media screen and (max-width: 1023px) {
+    display: none;
   }
-`
+`;
 const Img = styled.img`
-  cursor: pointer;
   border-radius: 50%;
   max-width: 100%;
   width: 110px;
@@ -22,51 +20,54 @@ const Img = styled.img`
   @media screen and (min-width: 1023px) {
     width: 150px;
   }
-`
+`;
 
 const NavContent = () => {
   return (
     <>
-      <DesktopDiv>
-        <li>
-          <NavLink
-            to='/acerca'
-            className={({ isActive }) => (isActive ? 'navlink-active' : '')}
-          >
-            ¿Quiénes Somos?
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/productos'
-            className={({ isActive }) => (isActive ? 'navlink-active' : '')}
-          >
-            Productos
-          </NavLink>
-        </li>
-      </DesktopDiv>
-      <Link to='/' css={`width: auto;`}>
-        <Img src={logo} alt='Logo de LynStore' />
-      </Link>
-      <DesktopDiv>
-        <li>
-          <NavLink
-            to='/contacto'
-            className={({ isActive }) => (isActive ? 'navlink-active' : '')}
-          >
-            Contacto
-          </NavLink>
-        </li>
-        <li>
-          <NavLink
-            to='/preguntas-frecuentes'
-            className={({ isActive }) => (isActive ? 'navlink-active' : '')}
-          >
-            Preguntas Frecuentes
-          </NavLink>
-        </li>
-      </DesktopDiv>
+      <DesktopList>
+        <NavLink
+          to='/acerca'
+          className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+        >
+          ¿Quiénes Somos?
+        </NavLink>
+      </DesktopList>
+      <DesktopList>
+        <NavLink
+          to='/productos'
+          className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+        >
+          Productos
+        </NavLink>
+      </DesktopList>
+      <li>
+        <Link
+          to='/'
+          css={`
+            width: auto;
+          `}
+        >
+          <Img src={logo} alt='Logo de LynStore' />
+        </Link>
+      </li>
+      <DesktopList>
+        <NavLink
+          to='/contacto'
+          className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+        >
+          Contacto
+        </NavLink>
+      </DesktopList>
+      <DesktopList>
+        <NavLink
+          to='/preguntas-frecuentes'
+          className={({ isActive }) => (isActive ? 'navlink-active' : '')}
+        >
+          Preguntas Frecuentes
+        </NavLink>
+      </DesktopList>
     </>
-  )
-}
-export default NavContent
+  );
+};
+export default NavContent;
