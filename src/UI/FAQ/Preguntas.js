@@ -1,9 +1,8 @@
 import { useState } from 'react';
 
-import { data } from './datos';
 import { FiPlus, FiMinus } from 'react-icons/fi';
 
-const Preguntas = () => {
+const Preguntas = ({ section, data }) => {
   const [clickedQuestion, setClickedQuestion] = useState(null);
   const toggle = (id) => {
     if (clickedQuestion === id) {
@@ -14,6 +13,9 @@ const Preguntas = () => {
   };
   return (
     <>
+      <header>
+        <h2>{section}</h2>
+      </header>
       {data.map((item) => {
         const { id, title, jsxContent } = item;
         return (
