@@ -13,6 +13,7 @@ const OuterContainer = styled.div`
 `;
 const Container = styled.div`
   display: flex;
+  justify-content: center;
   align-items: center;
   padding-bottom: 100px;
   box-shadow: 8px 1px 20px 0px rgba(0, 0, 0, 0.6);
