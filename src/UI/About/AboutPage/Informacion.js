@@ -1,13 +1,12 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Container = styled.article`
   @media screen and (min-width: 1023px) {
     max-width: 60%;
     width: 100%;
     margin: 0 auto;
-    min-height: 100vh;
   }
-`
+`;
 
 const Informacion = () => {
   return (
@@ -42,6 +41,6 @@ const Informacion = () => {
         </div>
       </Container>
     </>
-  )
-}
-export default Informacion
+  );
+};
+export default Informacion;
