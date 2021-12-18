@@ -3,7 +3,6 @@ import Preguntas from '../UI/FAQ/Preguntas';
 
 const Container = styled.main`
   padding: 100px 0;
-  min-height: 100vh;
 `;
 
 export const PreguntasFrecuentes = () => {
