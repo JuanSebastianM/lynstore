@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import Administradores from '../UI/About/AboutPage/Administradores';
 import Informacion from '../UI/About/AboutPage/Informacion';
 import juand from '../images/juand.jpg';
@@ -23,7 +23,11 @@ export const Acerca = () => {
     <>
       <Wrapper>
         <Informacion />
-        <section>
+        <section
+          css={`
+            margin-top: 60px;
+          `}
+        >
           <header>
             <h2>Nuestro Equipo</h2>
           </header>
