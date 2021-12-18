@@ -34,8 +34,8 @@ const ContactForm = () => {
         },
         body: JSON.stringify({ formData }),
       });
-      const data = response.json();
-      console.log('fetched data', data);
+      const data = await response.json();
+      console.log('response data', data);
     } catch (e) {
       console.log('Error!', e);
     }
