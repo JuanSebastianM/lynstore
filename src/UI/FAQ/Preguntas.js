@@ -1,6 +1,17 @@
+import { useState } from 'react';
+
 import { data } from './datos';
+import { FiPlus, FiMinus } from 'react-icons/fi';
 
 const Preguntas = () => {
+  const [clickedQuestion, setClickedQuestion] = useState(null);
+  const toggle = (id) => {
+    if (clickedQuestion === id) {
+      // if the content of clicked question is already visible, then hide it
+      return setClickedQuestion(null);
+    }
+    setClickedQuestion(id);
+  };
   return (
     <>
       {data.map((item) => {
@@ -8,11 +19,19 @@ const Preguntas = () => {
         return (
           <>
             <div key={id} className='preguntas-container'>
-              <header>
+              <header onClick={() => toggle(id)}>
                 <h3>{title}</h3>
-                <button type='button'>Click</button>
+                {clickedQuestion === id ? <FiMinus /> : <FiPlus />}
               </header>
-              <div className='content-wrapper'>{jsxContent}</div>
+              <div
+                className={`${
+                  clickedQuestion === id
+                    ? 'content-wrapper visible'
+                    : 'content-wrapper'
+                }`}
+              >
+                {jsxContent}
+              </div>
             </div>
           </>
         );
