@@ -1,9 +1,9 @@
-import React, { useRef, useEffect } from 'react'
-import styled from 'styled-components/macro'
-import NavContent from '../Navbar/NavContent'
-import { SideMenu } from '../Navbar/SideMenu'
-import SideMenuBtn from '../Navbar/SideMenuBtn'
-import { changeBgColor } from '../Navbar/changeBgColor'
+import React, { useRef, useEffect } from 'react';
+import styled from 'styled-components/macro';
+import NavContent from '../Navbar/NavContent';
+import { SideMenu } from '../Navbar/SideMenu';
+import SideMenuBtn from '../Navbar/SideMenuBtn';
+import { changeBgColor } from '../Navbar/changeBgColor';
 
 const Nav = styled.nav`
   width: 100%;
@@ -12,10 +12,10 @@ const Nav = styled.nav`
   padding: 5px 30px;
   z-index: 3;
   transition: all 500ms ease;
-`
+`;
 const NavCenter = styled.div`
   height: 100%;
-`
+`;
 const List = styled.ul`
   height: 100%;
   display: flex;
@@ -24,24 +24,24 @@ const List = styled.ul`
   @media screen and (min-width: 1023px) {
     justify-content: space-around;
   }
-`
+`;
 
 export const Navbar = () => {
-  const containerRef = useRef(null)
-  const sideMenu = useRef(null)
-  const btn = useRef(null)
-  const navbar = useRef(null)
+  const containerRef = useRef(null);
+  const sideMenu = useRef(null);
+  const btn = useRef(null);
+  const navbar = useRef(null);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
-      changeBgColor(navbar)
-    })
+      changeBgColor(navbar);
+    });
     return () => {
       window.removeEventListener('scroll', () => {
-        changeBgColor(navbar)
-      })
-    }
-  })
+        changeBgColor(navbar);
+      });
+    };
+  });
 
   return (
     <Nav ref={navbar}>
@@ -53,5 +53,5 @@ export const Navbar = () => {
         <SideMenu menuRef={sideMenu} contRef={containerRef} btnRef={btn} />
       </NavCenter>
     </Nav>
-  )
-}
+  );
+};
