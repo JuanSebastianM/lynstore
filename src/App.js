@@ -23,16 +23,15 @@ html {
 }
 li {
   list-style-type: none;
-  padding: 5px 30px;
 }
 a {
   width: 100%;
   text-decoration: none;
   color: #000;
 }
-p {
+/* p {
   text-shadow: 0 1px #000;
-}
+} */
 h2 {
   text-shadow: 3px 1px 0 #000;
   color: #ffd3d3;
@@ -371,6 +370,45 @@ p, a, li {
 .form-paragraph span {
   color: #ff0000;
   font-weight: bolder;
+}
+.faq-section {
+  margin-top: 30px;
+}
+.preguntas-container {
+  width: 100%;
+  margin: 0 auto;
+  max-width: 730px;
+  padding: 0 10px;
+}
+.preguntas-container header {
+  background-color: #ffd3d3;
+  cursor: pointer;
+  border: 2px solid #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.preguntas-container header h3 {
+  border: none;
+  margin: 0;
+}
+.content-wrapper {
+  overflow: hidden;
+  height: 0;
+  transition: height 500ms ease;
+}
+.visible {
+  height: 200px;
+  overflow-y: scroll;
+}
+.content-wrapper ol li {
+  list-style-type: decimal;
+}
+.content-wrapper ul li {
+  list-style-type: disc;
+}
+.content-wrapper ul, .content-wrapper ol {  
+  padding-left: 2rem;
 }
 `;
 
