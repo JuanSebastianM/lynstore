@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+
+import { data } from '../UI/FAQ/data';
 import Preguntas from '../UI/FAQ/Preguntas';
 
 const Container = styled.main`
@@ -9,9 +11,16 @@ export const PreguntasFrecuentes = () => {
   return (
     <>
       <Container>
-        <h2>Preguntas Frecuentes</h2>
         <section className='faq-section'>
-          <Preguntas />
+          <div>
+            <Preguntas section='Preguntas Comúnes' data={data[0]} />
+          </div>
+          <div>
+            <Preguntas
+              section='Preguntas Relacionadas A Compras Al Por Mayor'
+              data={data[1]}
+            />
+          </div>
         </section>
       </Container>
     </>
