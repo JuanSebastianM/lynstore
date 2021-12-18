@@ -53,7 +53,10 @@ h3 {
 }
 p, a, li {
   line-height: 1.2;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
+  @media screen and (min-width: 1023px) {
+    font-size: 1.8rem;
+  }
 }
 .active {
   transform: translateX(0);
@@ -372,15 +375,17 @@ p, a, li {
   font-weight: bolder;
 }
 .faq-section {
-  margin-top: 30px;
+  padding: 0 10px;
+  max-width: 760px;
+  width: 100%;
+  margin: 0 auto;
 }
 .preguntas-container {
   width: 100%;
-  margin: 0 auto;
-  max-width: 730px;
-  padding: 0 10px;
+  margin-bottom: 10px;
 }
 .preguntas-container header {
+  padding: 0 10px;
   background-color: #ffd3d3;
   cursor: pointer;
   border: 2px solid #000;
@@ -393,6 +398,7 @@ p, a, li {
   margin: 0;
 }
 .content-wrapper {
+  padding: 0 10px;
   overflow: hidden;
   height: 0;
   transition: height 500ms ease;
