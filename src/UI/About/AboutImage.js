@@ -34,9 +34,9 @@ const ImageContainer = styled.div`
   }
 `;
 const SiteImage = styled.img`
+  display: block;
   object-fit: contain;
   width: 100%;
-  z-index: -1;
 `;
 const ImagesContainer = styled.div`
   display: flex;
@@ -105,11 +105,17 @@ const ImageTwoContainer = styled(ImageOneContainer)`
 const ImageCardTwo = styled(ImageCardOne)`
   transform: rotate(325deg);
 `;
+const Wrapper = styled.div`
+  width: 100%;
+  height: 100%;
+`;
 
 const AboutImage = () => {
   return (
     <ImageContainer>
-      <SiteImage src={office} alt='Sitio físico de LynStore' />
+      <Wrapper>
+        <SiteImage src={office} alt='Sitio físico de LynStore' />
+      </Wrapper>
       <ImagesContainer>
         <ImageOneContainer>
           <ImageCardOne src={calma} alt='Imágen de producto de LynStore' />
