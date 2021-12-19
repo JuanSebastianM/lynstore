@@ -16,10 +16,7 @@ export const PreguntasFrecuentes = () => {
             <Preguntas section='Preguntas Comúnes' data={data[0]} />
           </div>
           <div>
-            <Preguntas
-              section='Preguntas Relacionadas A Compras Al Por Mayor'
-              data={data[1]}
-            />
+            <Preguntas section='Al Por Mayor' data={data[1]} />
           </div>
         </section>
       </Container>
