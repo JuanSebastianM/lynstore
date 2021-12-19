@@ -1,27 +1,26 @@
 import styled from 'styled-components';
+import HeroExtra from './HeroExtra';
 import HeroLinks from './HeroLinks';
 import HeroSmartphone from './HeroSmartphone';
 import HeroText from './HeroText';
 
 const HeroContainer = styled.section`
+  position: relative;
   width: 100%;
   min-height: 100vh;
   display: flex;
+  background-image: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgb(255 255 255) 100%
+  );
   @media screen and (max-width: 767px) {
     flex-direction: column;
+    margin-bottom: 60px;
   }
   justify-content: center;
   align-items: center;
   padding-top: 100px;
-  /* background-image: linear-gradient(0deg, rgb(0 0 0 / 45%), rgb(0 0 0 / 42%)),
-    url('https://images.unsplash.com/photo-1583292650898-7d22cd27ca6f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1374&q=80'); */
-  background-image: linear-gradient(177deg, rgb(212 224 222), rgb(0 0 0 / 42%)),
-    url('https://images.unsplash.com/photo-1607768188830-1d6016ae8520?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-attachment: fixed;
   @media screen and (min-width: 1023px) {
     justify-content: flex-start;
     padding: 0 110px;
@@ -36,6 +35,9 @@ const TextWrapper = styled.div`
   @media screen and (min-width: 1023px) {
     padding: 0;
   }
+  p {
+    margin-bottom: 15px;
+  }
 `;
 
 const Hero = () => {
@@ -43,9 +45,17 @@ const Hero = () => {
     <HeroContainer>
       <TextWrapper>
         <HeroText />
-        <HeroLinks />
+        <HeroLinks linkRouter={false} text='Comprar' />
       </TextWrapper>
       <HeroSmartphone />
+      <TextWrapper>
+        <HeroExtra />
+        <HeroLinks
+          linkRouter={true}
+          link='/preguntas-frecuentes'
+          text='Conocer más'
+        />
+      </TextWrapper>
     </HeroContainer>
   );
 };
