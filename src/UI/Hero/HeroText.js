@@ -1,24 +1,18 @@
-import styled from 'styled-components/macro'
-
-const Paragraph = styled.p`
-  margin-bottom: 15px;
-`
-
 const HeroText = () => {
   return (
     <>
       <header>
         <h2>Mereces lo que sueñas</h2>
       </header>
-      <Paragraph>
+      <p>
         Vistete como quieras, sé quien quieras, estudia lo que quieras, viaja a
         donde quieras.
-      </Paragraph>
-      <Paragraph>Sé feliz como TÚ QUIERAS.</Paragraph>
-      <Paragraph>
+      </p>
+      <p>Sé feliz como TÚ QUIERAS.</p>
+      <p>
         Sé feliz con <span className='styled-span'>LynStore</span>.
-      </Paragraph>
+      </p>
     </>
-  )
-}
-export default HeroText
+  );
+};
+export default HeroText;
