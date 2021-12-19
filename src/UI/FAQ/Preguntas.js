@@ -21,7 +21,10 @@ const Preguntas = ({ section, data }) => {
         return (
           <>
             <div key={id} className='preguntas-container'>
-              <header onClick={() => toggle(id)}>
+              <header
+                onClick={() => toggle(id)}
+                className={`${clickedQuestion === id ? 'active' : ''}`}
+              >
                 <h3>{title}</h3>
                 {clickedQuestion === id ? <FiMinus /> : <FiPlus />}
               </header>
