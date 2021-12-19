@@ -43,9 +43,12 @@ export const data = [
             <span>300 876 9307</span>
           </div>
           <div className='flex-div'>
-            <div className='line'>
-              <img src='' alt='LynStore logo' />
-            </div>
+            <div className='line'></div>
+            <img
+              src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1639949748/logo_jad5ik.png'
+              alt='Logo de LynStore'
+            />
+            <div className='line'></div>
           </div>
           <p>Si estás en una ciudad diferente a Sincelejo:</p>
           <div className='methods'>
@@ -70,19 +73,19 @@ export const data = [
           <div className='delivery-price'>
             <p>Sincelejo</p>
             <p>
-              <span>$</span>3.000
+              <span className='dollar-sign'>$</span>3.000
             </p>
           </div>
           <div className='delivery-price'>
             <p>Brémen</p>
             <p>
-              <span>$</span>4.000
+              <span className='dollar-sign'>$</span>4.000
             </p>
           </div>
           <div className='delivery-price'>
             <p>Sampués, Morroa, Chochó y Corozal</p>
             <p>
-              <span>$</span>5.000
+              <span className='dollar-sign'>$</span>5.000
             </p>
           </div>
           <div className='delivery-price'>
@@ -119,25 +122,72 @@ export const data = [
             </li>
           </ol>
           <div className='flex-div'>
-            <div className='line'>
-              <img src='' alt='LynStore logo' />
-            </div>
+            <div className='line'></div>
+            <img
+              src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1639949748/logo_jad5ik.png'
+              alt='Logo de LynStore'
+            />
+            <div className='line'></div>
           </div>
-          <p>La entrega se realiza de 2 a 3 días luego de realizado el pago.</p>
-          <p>
-            Si te encuentras en Sincelejo, lo enviaremos a través de domicilio.
-            Si te encuentras en otra ciudad, entonces a través de empresas de
-            envíos.
-          </p>
+          <ul>
+            <li>
+              La entrega se realiza de 2 a 3 días luego de realizado el pago.
+            </li>
+            <li>
+              Si te encuentras en Sincelejo, lo enviaremos a través de
+              domicilio.
+            </li>
+            <li>
+              Si te encuentras en otra ciudad, entonces a través de empresas de
+              envíos.
+            </li>
+          </ul>
           <div className='flex-div'>
-            <div className='line'>
-              <img src='' alt='LynStore logo' />
-            </div>
+            <div className='line'></div>
+            <img
+              src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1639949748/logo_jad5ik.png'
+              alt='Logo de LynStore'
+            />
+            <div className='line'></div>
+          </div>
+          <ul>
+            <li>
+              Para que se te apliquen precios mayoristas, la compra mínima debe
+              ser de <span className='dollar-sign'>$</span>100.000 pesos.
+            </li>
+            <li>
+              El envío es gratis por compras de o superiores a{' '}
+              <span className='dollar-sign'>$</span>200.000 pesos.
+            </li>
+          </ul>
+          <div className='flex-div'>
+            <div className='line'></div>
+            <img
+              src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1639949748/logo_jad5ik.png'
+              alt='Logo de LynStore'
+            />
+            <div className='line'></div>
           </div>
           <p>
-            <span>OJO:</span> No trabajamos antes de realizar el pago del
-            pedido, debido a que en muchas ocasiones nos dejaron pedidos hechos,
-            lo que acarrea dinero y tiempo perdido. Agradecemos comprensión.
+            <span className='bold-span'>OJO:</span> No trabajamos antes de
+            realizar el pago del pedido, debido a que en muchas ocasiones nos
+            dejaron pedidos hechos, lo que acarrea dinero y tiempo perdido.
+            Agradecemos comprensión.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: 'puedo-usar-sus-fotos-para-mostrar-a-mis-clientes',
+      title: '¿Puedo usar sus fotos para mostrar a mis clientes?',
+      jsxContent: (
+        <>
+          <p>
+            Por supuesto que sí. Al momento de comprar al por mayor te las
+            enviamos para que evites tomar nuevas fotos. Además puedes
+            promocionar todos nuestros accesorios y luego realizar el pedido de
+            acuerdo a lo que tus clientes te piden y así evitas invertir dinero
+            sin saber.
           </p>
         </>
       ),
