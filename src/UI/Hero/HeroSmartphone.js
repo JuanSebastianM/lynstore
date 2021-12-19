@@ -5,11 +5,6 @@ const SmartphoneDiv = styled.div`
   width: 235px;
   height: 450px;
   margin: 30px auto;
-  @media screen and (min-width: 767px) {
-    margin: auto;
-    width: 285px;
-    height: 590px;
-  }
   border: 16px #ffd3d3 solid;
   border-top-width: 60px;
   border-bottom-width: 60px;
@@ -20,7 +15,7 @@ const SmartphoneDiv = styled.div`
     width: 60px;
     height: 5px;
     position: absolute;
-    top: -30px;
+    top: -25px;
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #fff;
@@ -33,10 +28,21 @@ const SmartphoneDiv = styled.div`
     height: 35px;
     position: absolute;
     left: 50%;
-    bottom: -65px;
+    bottom: -60px;
     transform: translate(-50%, -50%);
     background-color: #fff;
     border-radius: 50%;
+  }
+  @media screen and (min-width: 767px) {
+    margin: auto;
+    width: 285px;
+    height: 590px;
+    &:before {
+      top: -30px;
+    }
+    &:after {
+      bottom: -65px;
+    }
   }
   .content {
     width: 100%;
@@ -44,7 +50,6 @@ const SmartphoneDiv = styled.div`
     background-color: #fff;
   }
   .content img {
-    object-fit: contain;
     width: 100%;
     height: 100%;
   }
