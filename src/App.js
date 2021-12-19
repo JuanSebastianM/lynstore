@@ -29,12 +29,9 @@ a {
   text-decoration: none;
   color: #000;
 }
-/* p {
-  text-shadow: 0 1px #000;
-} */
 h2 {
-  text-shadow: 3px 1px 0 #000;
-  color: #ffd3d3;
+  text-shadow: 3px 1px 0 #ffd3d3;
+  color: #837072;
   font-size: 2rem;
   text-align: center;
   margin-bottom: 10px;
@@ -43,7 +40,7 @@ h2 {
   }
 }
 h3 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   border-bottom: 2px solid #000;
   margin-bottom: 15px;
   @media screen and (min-width: 1023px) {
@@ -53,7 +50,7 @@ h3 {
 }
 p, a, li {
   line-height: 1.2;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   @media screen and (min-width: 1023px) {
     font-size: 1.8rem;
   }
@@ -107,9 +104,29 @@ p, a, li {
   }
   border-radius: 50%;
 }
+.hero-link {
+    display: block;
+  text-align: center;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #000;
+  color: #d4e0de;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transform: scale(1);
+  transition: all 500ms ease;
+  &:hover {
+    color: #000;
+    background-color: transparent;
+    border: 2px solid #000;
+  }
+  &:active {
+    transform: scale(0.8);
+  }
+}
 .big-diamond {
   display: block;
-  color: #54adb5;
+  color: #ffd3d3;
   font-size: 3em;
   @media screen and (min-width: 1023px) {
     font-size: 7rem;
@@ -235,13 +252,21 @@ p, a, li {
   height: 2px;
   background-color: #ffd3d3;
 }
+.flex-div img {
+  filter: drop-shadow(1px 0 0 #000);
+  max-width: 100%;
+  width: 60px;
+  @media screen and (min-width: 1023px) {
+    width: 100px;
+  }
+}
 .know-more, .nav-link {
   padding: 5px 20px;
   border-radius: 30px;
 }
 .know-more {
-  background-color: rgb(84 173 181 / 14%);
-  border: 2px solid #54adb5;
+  background-color: rgb(255 211 211 / 23%);
+  border: 2px solid #ffd3d3;
   width: 70%;
   text-align: center;
   transform: scale(1);
@@ -388,10 +413,14 @@ p, a, li {
   padding: 0 10px;
   background-color: #ffd3d3;
   cursor: pointer;
-  border: 2px solid #000;
+  border: 1px solid #000;
+  border-radius: 5px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.preguntas-container .active {
+  border-radius: 5px 5px 0 0;
 }
 .preguntas-container header h3 {
   border: none;
@@ -404,6 +433,9 @@ p, a, li {
   transition: height 500ms ease;
 }
 .visible {
+  border: 1px solid #000;
+  border-top: none;
+  border-radius: 0 0 5px 5px;
   height: 200px;
   overflow-y: scroll;
 }
