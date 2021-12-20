@@ -61,13 +61,11 @@ const ImageOneContainer = styled.div`
   transition: all 500ms ease;
   transform-origin: center -30px;
   transform: rotate(15deg);
+  animation: ${breezeOne} 2.5s infinite;
   @media screen and (min-width: 1023px) {
     width: 180px;
     height: 200px;
     transform-origin: center -40px;
-  }
-  &:hover {
-    animation: ${breezeOne} 2.5s infinite;
   }
   &::before {
     position: absolute;
@@ -98,9 +96,7 @@ const ImageCardOne = styled(SiteImage)`
 const ImageTwoContainer = styled(ImageOneContainer)`
   transform: rotate(-15deg);
   align-self: flex-start;
-  &:hover {
-    animation-name: ${breezeTwo};
-  }
+  animation-name: ${breezeTwo};
 `;
 const ImageCardTwo = styled(ImageCardOne)`
   transform: rotate(325deg);
