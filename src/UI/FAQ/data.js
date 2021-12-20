@@ -37,10 +37,22 @@ export const data = [
           </p>
           <div className='pay-method'>
             <div className='methods'>
-              <img src='' alt='Nequi' />
-              <img src='' alt='Daviplata' />
+              <div className='aligned-column-div'>
+                <img
+                  src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640039495/unnamed-removebg-preview_idqbif.png'
+                  alt='Nequi'
+                />
+                <p>Nequi</p>
+              </div>
+              <div className='aligned-column-div'>
+                <img
+                  src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640039807/daviplata_ek6ug2.jpg'
+                  alt='Daviplata'
+                />
+                <p>Daviplata</p>
+              </div>
             </div>
-            <span>300 876 9307</span>
+            <p className='phone-number'>300 876 9307</p>
           </div>
           <div className='flex-div'>
             <div className='line'></div>
@@ -52,14 +64,62 @@ export const data = [
           </div>
           <p>Si estás en una ciudad diferente a Sincelejo:</p>
           <div className='methods'>
-            <img src='' alt='Nequi' />
-            <img src='' alt='Daviplata' />
-            <img src='' alt='Efecty' />
-            <img src='' alt='Baloto' />
-            <img src='' alt='SuperGiros' />
-            <img src='' alt='Movii' />
-            <img src='' alt='Éxito' />
-            <img src='' alt='Olimpica' />
+            <div className='aligned-column-div'>
+              <img
+                src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640039495/unnamed-removebg-preview_idqbif.png'
+                alt='Nequi'
+              />
+              <p>Nequi</p>
+            </div>
+            <div className='aligned-column-div'>
+              <img
+                src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640039807/daviplata_ek6ug2.jpg'
+                alt='Daviplata'
+              />
+              <p>Daviplata</p>
+            </div>
+            <div className='aligned-column-div'>
+              <img
+                src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640041413/logo_efecty-removebg-preview_qo0gxl.png'
+                alt='Efecty'
+              />
+              <p>Efecty</p>
+            </div>
+            <div className='aligned-column-div'>
+              <img
+                src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640041579/baloto-cali-colombia-785500_bbkn9a.jpg'
+                alt='Baloto'
+              />
+              <p>Baloto</p>
+            </div>
+            <div className='aligned-column-div'>
+              <img
+                src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640041633/supergiros-2_oc0ncp.png'
+                alt='SuperGiros'
+              />
+              <p>SuperGiros</p>
+            </div>
+            <div className='aligned-column-div'>
+              <img
+                src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640041742/7PPwLfz28cSzZfRuMj0Ptd71uOUSVEYU23di-kVC1l_oTPBvtHAkXw893FtjshhQqJ0_um4vid.png'
+                alt='Movii'
+              />
+              <p>Movii</p>
+            </div>
+            <div className='aligned-column-div'>
+              <img
+                src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640041792/Logo_Exito_colombia_l8jwg8.png'
+                alt='Éxito'
+              />
+              <p>Éxito</p>
+            </div>
+            <div className='aligned-column-div'>
+              <img
+                src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640041896/Olimpical_fjrkex.png'
+                alt='Olimpica'
+              />
+              <p>Olimpica</p>
+            </div>
           </div>
         </>
       ),
@@ -69,27 +129,45 @@ export const data = [
       title: '¿Cuáles son los precios de envío?',
       jsxContent: (
         <>
-          <img src='' alt='Domiciliario manejando una moto' />
-          <div className='delivery-price'>
-            <p>Sincelejo</p>
-            <p>
-              <span className='dollar-sign'>$</span>3.000
-            </p>
+          <div className='faq-text-wrapper'>
+            <img
+              className='delivery-img'
+              src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640037699/pizza-delivery-food-business-service-pizza-removebg-preview_r7qocp.png'
+              alt='Domiciliario manejando una moto'
+            />
+            <div className='aligned-column-div'>
+              <p>Sincelejo</p>
+              <p>
+                <span className='dollar-sign'>$</span>3.000
+              </p>
+            </div>
+            <div className='aligned-column-div'>
+              <p>Brémen</p>
+              <p>
+                <span className='dollar-sign'>$</span>4.000
+              </p>
+            </div>
+            <div className='aligned-column-div'>
+              <p>Sampués, Morroa, Chochó y Corozal</p>
+              <p>
+                <span className='dollar-sign'>$</span>5.000
+              </p>
+            </div>
           </div>
-          <div className='delivery-price'>
-            <p>Brémen</p>
-            <p>
-              <span className='dollar-sign'>$</span>4.000
-            </p>
+          <div className='flex-div'>
+            <div className='line'></div>
+            <img
+              src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1639949748/logo_jad5ik.png'
+              alt='Logo de LynStore'
+            />
+            <div className='line'></div>
           </div>
-          <div className='delivery-price'>
-            <p>Sampués, Morroa, Chochó y Corozal</p>
-            <p>
-              <span className='dollar-sign'>$</span>5.000
-            </p>
-          </div>
-          <div className='delivery-price'>
-            <img src='' alt='Servientrega' />
+          <div className='aligned-column-div'>
+            <img
+              className='delivery-img'
+              src='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640038668/www.servientrega.com_-1_svnvlw.png'
+              alt='Servientrega'
+            />
             <p>
               Para envíos a diferentes ciudades, el precio depende de la ciudad
               donde te encuentres.
