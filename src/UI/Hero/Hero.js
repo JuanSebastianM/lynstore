@@ -14,7 +14,7 @@ const HeroContainer = styled.section`
     rgba(238, 174, 202, 1) 0%,
     rgb(255 255 255) 100%
   );
-  @media screen and (max-width: 767px) {
+  @media screen and (max-width: 1023px) {
     flex-direction: column;
     margin-bottom: 60px;
   }
@@ -22,9 +22,8 @@ const HeroContainer = styled.section`
   align-items: center;
   padding-top: 100px;
   @media screen and (min-width: 1023px) {
-    justify-content: flex-start;
-    padding: 0 110px;
-    background-position: top;
+    justify-content: space-evenly;
+    padding: 100px 0 40px;
   }
 `;
 const TextWrapper = styled.div`
