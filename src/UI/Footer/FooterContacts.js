@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
-import { MdOutlineLocationOn, MdOutlineEmail } from 'react-icons/md';
+import { MdOutlineEmail } from 'react-icons/md';
+import { GoLocation } from 'react-icons/go';
 import { BsWhatsapp, BsInstagram } from 'react-icons/bs';
 
 const GridWrapper = styled.div`
@@ -23,7 +24,7 @@ const FooterContacts = () => {
           <h3>Contactos</h3>
         </header>
         <GridWrapper>
-          <MdOutlineLocationOn />
+          <GoLocation />
           <div>
             <span>Sincelejo, Sucre, El Cortijo</span>
             <span>Kra 6a #29b 14</span>
