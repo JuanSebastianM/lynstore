@@ -44,7 +44,11 @@ const Hero = () => {
     <HeroContainer>
       <TextWrapper>
         <HeroText />
-        <HeroLinks linkRouter={false} text='Comprar' />
+        <HeroLinks
+          linkRouter={false}
+          link='https://lyn-store.olistshops.com'
+          text='Comprar'
+        />
       </TextWrapper>
       <HeroSmartphone />
       <TextWrapper>
