@@ -36,6 +36,7 @@ const ContactForm = () => {
       const data = await response.json();
       if (data.status === 'success') {
         alert('Correo enviado satisfactoriamente.');
+        setFormData({ firstName: '', lastName: '', email: '', message: '' });
       } else if (data.status === 'fail') {
         alert(`Hubo un error al enviar el correo :(`);
       }

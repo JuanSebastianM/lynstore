@@ -1,17 +1,20 @@
+'use strict';
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 const express = require('express');
 const path = require('path');
 const app = express();
+const serverless = require('serverless-http');
 const cors = require('cors');
 
+const router = express.Router();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
-app.post('/enviar', (req, res) => {
+router.post('/enviar', (req, res) => {
   console.log(req.body.formData);
   const userInfo = req.body.formData;
 
@@ -71,8 +74,12 @@ app.post('/enviar', (req, res) => {
       console.log('Error en el envío!', error.message);
     });
 });
+app.use('/.netlify/functions/server', router);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });
+
+module.exports = app;
+module.exports.handler = serverless(app);
