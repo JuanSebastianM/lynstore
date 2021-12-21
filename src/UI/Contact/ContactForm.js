@@ -34,10 +34,10 @@ const ContactForm = () => {
         body: JSON.stringify({ formData }),
       });
       const data = await response.json();
-      if (data.status !== 'success') {
-        alert('Hubo un fallo al enviar el correo.');
-      } else {
+      if (data.status === 'success') {
         alert('Correo enviado satisfactoriamente.');
+      } else if (data.status === 'fail') {
+        alert(`Hubo un error al enviar el correo :(`);
       }
     } catch (e) {
       console.log('Error!', e);
