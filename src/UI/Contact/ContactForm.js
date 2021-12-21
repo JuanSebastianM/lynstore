@@ -25,17 +25,20 @@ const ContactForm = () => {
   };
   const submitForm = async (e) => {
     e.preventDefault();
-    console.log(formData);
     try {
-      const response = await fetch('http://localhost:3001/enviar', {
+      const response = await fetch('/enviar', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
+          'Content-type': 'application/json',
         },
         body: JSON.stringify({ formData }),
       });
       const data = await response.json();
-      console.log('response data', data);
+      if (data.status !== 'success') {
+        alert('Hubo un fallo al enviar el correo.');
+      } else {
+        alert('Correo enviado satisfactoriamente.');
+      }
     } catch (e) {
       console.log('Error!', e);
     }
@@ -60,7 +63,9 @@ const ContactForm = () => {
               />
             </div>
             <div>
-              <label htmlFor='lastName'>Primer Apellido</label>
+              <label htmlFor='lastName' className='required'>
+                Primer Apellido
+              </label>
               <input
                 type='text'
                 onChange={handleForm}
@@ -68,6 +73,7 @@ const ContactForm = () => {
                 name='lastName'
                 placeholder='Rodríguez'
                 value={formData.lastName}
+                required
               />
             </div>
           </div>

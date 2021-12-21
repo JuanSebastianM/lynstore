@@ -41,7 +41,6 @@ app.post('/enviar', (req, res) => {
           refreshToken: REFRESH_TOKEN,
           accessToken: accessToken,
         },
-        tls: { rejectUnauthorized: false },
       });
       let mailOptions = {
         from: `${userInfo.firstName} ${userInfo.lastName} <${userInfo.email}>`,
@@ -52,8 +51,8 @@ app.post('/enviar', (req, res) => {
               <p>¡Tienes un nuevo correo electrónico enviado desde el sitio web de LynStore!</p>
               <h3>Detalles del contacto:</h3>
               <ul>
-                <li>Name: ${userInfo.firstName} ${userInfo.lastName}</li>
-                <li>Email: ${userInfo.email}</li>
+                <li>Nombre: ${userInfo.firstName} ${userInfo.lastName}</li>
+                <li>Correo: ${userInfo.email}</li>
               </ul>
               <h3>Mensaje:</h3>
               <p>${userInfo.message}</p>
@@ -66,8 +65,9 @@ app.post('/enviar', (req, res) => {
     }
   };
   sendMail()
-    .then((result) => res.status(200).send('¡Correo enviado!'))
+    .then((result) => res.json({ status: 'success' }))
     .catch((error) => {
+      res.json({ status: 'fail' });
       console.log('Error en el envío!', error.message);
     });
 });
