@@ -29,11 +29,36 @@ const ProductsContent = () => {
     <>
       <h2>Productos</h2>
       <Wrapper>
-        <ProductPreview title='Aretes' image={aretes} link='/' />
-        <ProductPreview title='Anillos' image={anillo} link='/' />
-        <ProductPreview title='Cadenas' image={cadena} link='/' />
-        <ProductPreview title='Pulseras' image={pulseras} link='/' />
-        <ProductPreview title='Sujetador de gafas' image={sujetador} link='/' />
+        <ProductPreview
+          title='Aretes'
+          image={aretes}
+          link='https://lyn-store.olistshops.com/categorias/aretes'
+        />
+        <ProductPreview
+          title='Anillos'
+          image={anillo}
+          link='https://lyn-store.olistshops.com/categorias/anillo'
+        />
+        <ProductPreview
+          title='Cadenas'
+          image={cadena}
+          link='https://lyn-store.olistshops.com/categorias/cadenas'
+        />
+        <ProductPreview
+          title='Pulseras'
+          image={pulseras}
+          link='https://lyn-store.olistshops.com/categorias/pulseras-para-compartir'
+        />
+        <ProductPreview
+          title='Sujetador de gafas'
+          image={sujetador}
+          link='https://lyn-store.olistshops.com/categorias/sujetador-de-gafas'
+        />
+        <ProductPreview
+          title='Chocker'
+          image='https://res.cloudinary.com/dmhhz7iam/image/upload/v1640049422/a406fe82-7036-4e37-8bf4-8a64e7025710_aqgtin.jpg'
+          link='https://lyn-store.olistshops.com/categorias/chocker'
+        />
       </Wrapper>
     </>
   );
