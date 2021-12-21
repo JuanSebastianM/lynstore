@@ -8,7 +8,12 @@ const HeroLinks = ({ linkRouter, link, text }) => {
           {text}
         </Link>
       ) : (
-        <a className='hero-link' href={link}>
+        <a
+          className='hero-link'
+          href={link}
+          target='_blank'
+          rel='noopener noreferrer'
+        >
           {text}
         </a>
       )}
