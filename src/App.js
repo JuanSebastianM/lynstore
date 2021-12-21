@@ -247,6 +247,11 @@ p, a, li {
     order: 5;
   }
 }
+.desktop-order-6 {
+  @media screen and (min-width: 1023px) {
+    order: 6;
+  }
+}
 .flex-div {
   display: flex;
   justify-content: center;
