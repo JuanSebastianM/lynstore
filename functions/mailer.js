@@ -4,7 +4,7 @@ const { google } = require('googleapis');
 const express = require('express');
 const path = require('path');
 const app = express();
-// const serverless = require('serverless-http');
+const serverless = require('serverless-http');
 const cors = require('cors');
 
 // const router = express.Router();
@@ -14,14 +14,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 // app.use('/.netlify/functions/mailer', app);
 
-app.post('/enviar', (req, res) => {
-  const userInfo = req.body.formData;
-  // console.log(req.body.formData);
-  const EMAIL = process.env.REACT_APP_EMAIL;
-  const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
-  const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
-  const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
-  const REFRESH_TOKEN = process.env.REACT_APP_REFRESH_TOKEN;
+const EMAIL = process.env.REACT_APP_EMAIL;
+const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
+const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
+const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
+const REFRESH_TOKEN = process.env.REACT_APP_REFRESH_TOKEN;
+
+exports.handler = (event, context, callback) => {
+  const userInfo = JSON.parse(event.body);
+  console.log(userInfo);
 
   const oAuth2Client = new google.auth.OAuth2(
     CLIENT_ID,
@@ -45,19 +46,19 @@ app.post('/enviar', (req, res) => {
         },
       });
       let mailOptions = {
-        from: `${userInfo.firstName} ${userInfo.lastName} <${userInfo.email}>`,
+        from: `${userInfo.formData.firstName} ${userInfo.formData.lastName} <${userInfo.formData.email}>`,
         to: EMAIL,
-        subject: `Correo enviado por ${userInfo.firstName} ${userInfo.lastName} desde el sitio web`,
-        text: `${userInfo.message}`,
+        subject: `Correo enviado por ${userInfo.formData.firstName} ${userInfo.formData.lastName} desde el sitio web`,
+        text: `${userInfo.formData.message}`,
         html: `
               <p>¡Tienes un nuevo correo electrónico enviado desde el sitio web de LynStore!</p>
               <h3>Detalles del contacto:</h3>
               <ul>
-                <li>Nombre: ${userInfo.firstName} ${userInfo.lastName}</li>
-                <li>Correo: ${userInfo.email}</li>
+                <li>Nombre: ${userInfo.formData.firstName} ${userInfo.formData.lastName}</li>
+                <li>Correo: ${userInfo.formData.email}</li>
               </ul>
               <h3>Mensaje:</h3>
-              <p>${userInfo.message}</p>
+              <p>${userInfo.formData.message}</p>
               `,
       };
       const result = await transporter.sendMail(mailOptions);
@@ -67,12 +68,18 @@ app.post('/enviar', (req, res) => {
     }
   };
   sendMail()
-    .then((result) => res.json({ status: 'success' }))
+    .then((result) => {
+      return {
+        statusCode: 200,
+        body: 'Correo enviado',
+      };
+    })
     .catch((error) => {
-      res.json({ status: 'fail' });
-      console.log('Error en el envío!', error.message);
+      return {
+        statusCode: 400,
+      };
     });
-});
+};
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

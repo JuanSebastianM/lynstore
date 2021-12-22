@@ -26,21 +26,20 @@ const ContactForm = () => {
   const submitForm = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/enviar', {
+      const response = await fetch('/.netlify/functions/mailer', {
         method: 'POST',
         headers: {
           'Content-type': 'application/json',
         },
         body: JSON.stringify({ formData }),
       });
-      const data = await response.json();
-      if (data.status === 'success') {
+      if (!response.ok) {
+        alert(`Hubo un error al enviar el correo :(`);
+      } else {
         alert('Correo enviado satisfactoriamente.');
         setTimeout(() => {
           setFormData({ firstName: '', lastName: '', email: '', message: '' });
         }, 1500);
-      } else if (data.status === 'fail') {
-        alert(`Hubo un error al enviar el correo :(`);
       }
     } catch (e) {
       console.log('Error!', e);
