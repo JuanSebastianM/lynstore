@@ -39,7 +39,7 @@ const ContactForm = () => {
         alert('Correo enviado satisfactoriamente.');
         setTimeout(() => {
           setFormData({ firstName: '', lastName: '', email: '', message: '' });
-        }, 2000);
+        }, 1000);
       }
     } catch (e) {
       console.log('Error!', e);
