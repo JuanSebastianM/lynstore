@@ -71,7 +71,7 @@ exports.handler = (event, context, callback) => {
     .then((result) => {
       return {
         statusCode: 200,
-        body: 'Correo enviado',
+        body: 'Correo enviado satisfactoriamente',
       };
     })
     .catch((error) => {
