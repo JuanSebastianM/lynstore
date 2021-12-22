@@ -13,6 +13,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
+app.use('/.netlify/functions/mailer', router);
 
 router.post('/enviar', (req, res) => {
   console.log(req.body.formData);
@@ -74,7 +75,6 @@ router.post('/enviar', (req, res) => {
       console.log('Error en el envío!', error.message);
     });
 });
-app.use('/.netlify/functions/server', router);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
