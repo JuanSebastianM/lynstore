@@ -1,24 +1,22 @@
-'use strict';
 require('dotenv').config();
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
 const express = require('express');
 const path = require('path');
 const app = express();
-const serverless = require('serverless-http');
+// const serverless = require('serverless-http');
 const cors = require('cors');
 
-const router = express.Router();
+// const router = express.Router();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
-app.use('/.netlify/functions/mailer', router);
+// app.use('/.netlify/functions/mailer', app);
 
-router.post('/enviar', (req, res) => {
-  console.log(req.body.formData);
+app.post('/enviar', (req, res) => {
   const userInfo = req.body.formData;
-
+  // console.log(req.body.formData);
   const EMAIL = process.env.REACT_APP_EMAIL;
   const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
   const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
@@ -81,5 +79,5 @@ app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
 });
 
-module.exports = app;
-module.exports.handler = serverless(app);
+// module.exports = app;
+// module.exports.handler = serverless(app);
