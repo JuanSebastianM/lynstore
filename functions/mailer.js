@@ -1,18 +1,5 @@
-require('dotenv').config();
 const nodemailer = require('nodemailer');
 const { google } = require('googleapis');
-const express = require('express');
-const path = require('path');
-const app = express();
-const serverless = require('serverless-http');
-const cors = require('cors');
-
-// const router = express.Router();
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cors());
-// app.use('/.netlify/functions/mailer', app);
 
 const EMAIL = process.env.REACT_APP_EMAIL;
 const CLIENT_ID = process.env.REACT_APP_CLIENT_ID;
@@ -20,9 +7,15 @@ const CLIENT_SECRET = process.env.REACT_APP_CLIENT_SECRET;
 const REDIRECT_URI = process.env.REACT_APP_REDIRECT_URI;
 const REFRESH_TOKEN = process.env.REACT_APP_REFRESH_TOKEN;
 
-exports.handler = (event, context, callback) => {
+exports.handler = async (event, context) => {
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: 'Method Not Allowed',
+    };
+  }
   const userInfo = JSON.parse(event.body);
-  console.log(userInfo);
+  console.log('user info:', userInfo);
 
   const oAuth2Client = new google.auth.OAuth2(
     CLIENT_ID,
@@ -46,7 +39,7 @@ exports.handler = (event, context, callback) => {
         },
       });
       let mailOptions = {
-        from: `${userInfo.formData.firstName} ${userInfo.formData.lastName} <${userInfo.formData.email}>`,
+        from: `"${userInfo.formData.firstName} ${userInfo.formData.lastName} ✨" <${userInfo.formData.email}>`,
         to: EMAIL,
         subject: `Correo enviado por ${userInfo.formData.firstName} ${userInfo.formData.lastName} desde el sitio web`,
         text: `${userInfo.formData.message}`,
@@ -67,24 +60,26 @@ exports.handler = (event, context, callback) => {
       console.log('Error!!!!!!!', err);
     }
   };
-  sendMail()
-    .then((result) => {
-      return {
-        statusCode: 200,
-        body: 'Correo enviado satisfactoriamente',
-      };
-    })
-    .catch((error) => {
-      return {
-        statusCode: 400,
-      };
-    });
+  const res = await sendMail();
+  if (res.messageId) {
+    return {
+      statusCode: 200,
+      header: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        sent: true,
+        message: res.messageId,
+      }),
+    };
+  }
+  return {
+    statusCode: 400,
+    header: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      sent: false,
+    }),
+  };
 };
-
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-  console.log(`Server is running on port: ${PORT}`);
-});
-
-// module.exports = app;
-// module.exports.handler = serverless(app);
