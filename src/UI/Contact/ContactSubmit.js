@@ -17,10 +17,16 @@ const SubmitBtn = styled.button`
   }
 `;
 
-const ContactSubmit = () => {
+const ContactSubmit = ({ text }) => {
   return (
     <>
-      <SubmitBtn type='submit'>Enviar</SubmitBtn>
+      {text === 'Enviando...' ? (
+        <SubmitBtn type='submit' disabled>
+          {text}
+        </SubmitBtn>
+      ) : (
+        <SubmitBtn type='submit'>{text}</SubmitBtn>
+      )}
     </>
   );
 };
