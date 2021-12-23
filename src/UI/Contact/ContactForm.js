@@ -20,8 +20,7 @@ const ContactForm = () => {
     btnText: 'Enviar',
     isRobot: true,
   });
-  const reCaptchaChange = (value) => {
-    console.log('Captcha value: ', value);
+  const reCaptchaChange = () => {
     if (reCaptcha.current.getValue()) {
       setSubmitData({ ...submitData, isRobot: false });
     }
