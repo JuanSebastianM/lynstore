@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import ProductsContent from '../UI/Products/ProductsContent';
+import ProductsContent from '../components/Products/ProductsContent';
 
 const Container = styled.section`
   background-image: url('https://res.cloudinary.com/dmhhz7iam/image/upload/v1639165525/Twinkle_Star-0.7s-1366px_nkysbw.png');

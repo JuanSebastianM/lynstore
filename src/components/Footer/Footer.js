@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
-import FooterHeader from '../UI/Footer/FooterHeader';
-import FooterLinks from '../UI/Footer/FooterLinks';
-import FooterContacts from '../UI/Footer/FooterContacts';
-import FooterExtra from '../UI/Footer/FooterExtra';
+import FooterHeader from './FooterContacts';
+import FooterLinks from './FooterLinks';
+import FooterContacts from './FooterContacts';
+import FooterExtra from './FooterExtra';
 
 const Container = styled.footer`
   background-color: #ffe9e9;

@@ -1,7 +1,7 @@
 import styled from 'styled-components/macro';
 
-import Hero from '../UI/Hero/Hero';
-import About from '../UI/About/About';
+import Hero from '../components/Hero/Hero';
+import About from '../components/About/About';
 
 const Wrapper = styled.main`
   width: 100%;

@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro';
-import Administradores from '../UI/About/AboutPage/Administradores';
-import Informacion from '../UI/About/AboutPage/Informacion';
+import Administradores from '../components/About/AboutPage/Administradores';
+import Informacion from '../components/About/AboutPage/Informacion';
 import juand from '../images/juand.jpg';
 import karolyn from '../images/karolyn.jpg';
 

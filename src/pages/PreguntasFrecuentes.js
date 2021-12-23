@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import { data } from '../UI/FAQ/data';
-import Preguntas from '../UI/FAQ/Preguntas';
+import { data } from '../components/FAQ/data';
+import Preguntas from '../components/FAQ/Preguntas';
 
 const Container = styled.main`
   padding: 100px 0;

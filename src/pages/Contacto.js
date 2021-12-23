@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
-import ContactForm from '../UI/Contact/ContactForm';
-import ContactSocials from '../UI/Contact/ContactSocials';
+import ContactForm from '../components/Contact/ContactForm';
+import ContactSocials from '../components/Contact/ContactSocials';
 
 const Container = styled.main`
   min-height: 100vh;

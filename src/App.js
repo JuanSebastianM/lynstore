@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
 import { createGlobalStyle } from 'styled-components';
 
-import { Home } from './components/Home';
-import { Navbar } from './components/Navbar';
+import { Navbar } from './components/Navbar/Navbar';
+import { Footer } from './components/Footer/Footer';
+import { Home } from './pages/Home';
 import { Acerca } from './pages/Acerca';
-import { Footer } from './components/Footer';
 import { Productos } from './pages/Productos';
 import { Contacto } from './pages/Contacto';
 import { PreguntasFrecuentes } from './pages/PreguntasFrecuentes';

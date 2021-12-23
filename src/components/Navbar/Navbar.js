@@ -1,9 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import styled from 'styled-components/macro';
-import NavContent from '../Navbar/NavContent';
-import { SideMenu } from '../Navbar/SideMenu';
-import SideMenuBtn from '../Navbar/SideMenuBtn';
-import { changeBgColor } from '../Navbar/changeBgColor';
+import NavContent from './NavContent';
+import { SideMenu } from './SideMenu';
+import SideMenuBtn from './SideMenuBtn';
+import { changeBgColor } from './changeBgColor';
 
 const Nav = styled.nav`
   width: 100%;

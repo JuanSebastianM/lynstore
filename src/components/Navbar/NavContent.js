@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components/macro';
-import logo from '../images/logo.png';
+import logo from '../../images/logo.png';
 
 const DesktopList = styled.li`
   @media screen and (max-width: 1023px) {
