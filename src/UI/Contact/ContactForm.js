@@ -1,7 +1,6 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import styled from 'styled-components';
-
-import ContactSubmit from './ContactSubmit';
+import FormContent from './FormContent';
 
 const FormContainer = styled.div`
   padding: 20px;
@@ -10,12 +9,23 @@ const FormContainer = styled.div`
 `;
 
 const ContactForm = () => {
+  const reCaptcha = useRef(null);
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     email: '',
     message: '',
   });
+  const [submitData, setSubmitData] = useState({
+    btnText: 'Enviar',
+    isRobot: true,
+  });
+  const reCaptchaChange = (value) => {
+    console.log('Captcha value: ', value);
+    if (reCaptcha.current.getValue()) {
+      setSubmitData({ ...submitData, isRobot: false });
+    }
+  };
   const handleForm = (e) => {
     e.preventDefault();
     setFormData({
@@ -25,88 +35,46 @@ const ContactForm = () => {
   };
   const submitForm = async (e) => {
     e.preventDefault();
-    try {
-      const response = await fetch('/.netlify/functions/mailer', {
-        method: 'POST',
-        headers: {
-          'Content-type': 'application/json',
-        },
-        body: JSON.stringify({ formData }),
-      });
-      if (!response.ok) {
-        alert(`Hubo un error al enviar el correo :(`);
-      } else {
-        alert('Correo enviado satisfactoriamente.');
-        setTimeout(() => {
+    if (submitData.isRobot) {
+      alert('Debes completar el captcha para poder enviar un correo.');
+      return;
+    } else {
+      setSubmitData({ ...submitData, btnText: 'Enviando...' });
+      try {
+        const response = await fetch('/.netlify/functions/mailer', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ formData }),
+        });
+        const data = await response.json();
+        if (!data.sent) {
+          alert(
+            `Hubo un error al enviar el correo :(.\nPor favor reinicia la página e intenta de nuevo.`
+          );
+        } else {
+          alert('Correo enviado satisfactoriamente.');
           setFormData({ firstName: '', lastName: '', email: '', message: '' });
-        }, 1000);
+          setSubmitData({ btnText: 'Enviar', isRobot: true });
+          reCaptcha.current.reset();
+        }
+      } catch (e) {
+        console.log('Error!', e);
       }
-    } catch (e) {
-      console.log('Error!', e);
     }
   };
   return (
     <>
       <FormContainer>
-        <form className='styled-form' onSubmit={submitForm}>
-          <div className='form-names'>
-            <div>
-              <label htmlFor='firstName' className='required'>
-                Primer Nombre
-              </label>
-              <input
-                type='text'
-                onChange={handleForm}
-                id='firstName'
-                name='firstName'
-                placeholder='Susana'
-                value={formData.firstName}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor='lastName' className='required'>
-                Primer Apellido
-              </label>
-              <input
-                type='text'
-                onChange={handleForm}
-                id='lastName'
-                name='lastName'
-                placeholder='Rodríguez'
-                value={formData.lastName}
-                required
-              />
-            </div>
-          </div>
-          <label htmlFor='email' className='required'>
-            Correo Electrónico
-          </label>
-          <input
-            type='email'
-            onChange={handleForm}
-            id='email'
-            name='email'
-            placeholder='tucorreo@ejemplo.com'
-            value={formData.email}
-            required
-          />
-          <label htmlFor='message' className='required'>
-            Mensaje
-          </label>
-          <textarea
-            id='message'
-            onChange={handleForm}
-            name='message'
-            placeholder='Escribe tu mensaje aquí...'
-            value={formData.message}
-            required
-          />
-          <p className='form-paragraph'>
-            Los campos con un <span>*</span> son obligatorios.
-          </p>
-          <ContactSubmit />
-        </form>
+        <FormContent
+          formData={formData}
+          submitForm={submitForm}
+          btnText={submitData.btnText}
+          handleForm={handleForm}
+          reCaptcha={reCaptcha}
+          reCaptchaChange={reCaptchaChange}
+        />
       </FormContainer>
     </>
   );
