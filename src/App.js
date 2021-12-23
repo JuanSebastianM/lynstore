@@ -397,7 +397,7 @@ p, a, li {
   font-weight: bolder;
 }
 .form-paragraph {
-  margin-top: 10px;
+  margin: 10px 0;
   font-size: 1.2rem;
 }
 .form-paragraph span {
