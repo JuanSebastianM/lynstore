@@ -3,7 +3,10 @@ import styled from 'styled-components';
 import FormContent from './FormContent';
 
 const FormContainer = styled.div`
-  padding: 20px;
+  padding: 20px 0;
+  @media screen and (min-width: 1023px) {
+    padding: 20px;
+  }
   border: 2px solid #000;
   border-radius: 10px;
 `;

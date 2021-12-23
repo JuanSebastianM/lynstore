@@ -8,7 +8,7 @@ const Container = styled.main`
   padding: 100px 0;
 `;
 const Section = styled.section`
-  padding: 0 20px;
+  padding: 0 30px;
   display: flex;
   justify-content: center;
   align-items: center;
