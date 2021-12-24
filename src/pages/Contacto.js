@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 
 import ContactForm from '../components/Contact/ContactForm';
@@ -6,6 +7,7 @@ import ContactSocials from '../components/Contact/ContactSocials';
 const Container = styled.main`
   min-height: 100vh;
   padding: 100px 0;
+  background-image: url('https://res.cloudinary.com/dmhhz7iam/image/upload/v1639258362/grid-1s-1084px_nmljfv.png');
 `;
 const Section = styled.section`
   padding: 0 30px;
@@ -20,6 +22,9 @@ const Section = styled.section`
 `;
 
 export const Contacto = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Container>
