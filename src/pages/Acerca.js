@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from 'styled-components/macro';
 import Administradores from '../components/About/AboutPage/Administradores';
 import Informacion from '../components/About/AboutPage/Informacion';
@@ -5,7 +6,9 @@ import juand from '../images/juand.jpg';
 import karolyn from '../images/karolyn.jpg';
 
 const Wrapper = styled.main`
-  background-image: url('https://res.cloudinary.com/dmhhz7iam/image/upload/v1639258362/grid-1s-1084px_nmljfv.png');
+  background-image: url('https://images.unsplash.com/photo-1640177155742-835de7b2a9a0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=327&q=80');
+  background-repeat: no-repeat;
+  background-size: cover;
   padding: 100px 0 30px;
   width: 100%;
   min-height: 100vh;
@@ -19,6 +22,9 @@ const AdminsWrapper = styled.div`
 `;
 
 export const Acerca = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Wrapper>
