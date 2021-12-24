@@ -7,7 +7,7 @@ const PictureWrapper = styled.div`
   height: 225px;
   margin: 0 auto;
   overflow: hidden;
-  border: 10px solid #ffe6ed;
+  border: 10px solid rgb(255 230 237 / 28%);
 `;
 
 const Picture = styled.img`
