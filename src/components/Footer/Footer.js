@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import FooterHeader from './FooterContacts';
+import FooterHeader from './FooterHeader';
 import FooterLinks from './FooterLinks';
 import FooterContacts from './FooterContacts';
 import FooterExtra from './FooterExtra';
