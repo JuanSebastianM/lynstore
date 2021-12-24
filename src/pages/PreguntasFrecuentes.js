@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 
 import { data } from '../components/FAQ/data';
@@ -8,6 +9,9 @@ const Container = styled.main`
 `;
 
 export const PreguntasFrecuentes = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Container>

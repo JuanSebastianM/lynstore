@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from 'styled-components';
 
 import ProductsContent from '../components/Products/ProductsContent';
@@ -15,6 +16,9 @@ const Container = styled.section`
   min-height: 100vh;
 `;
 export const Productos = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Container>
