@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import styled from 'styled-components/macro';
 
 import Hero from '../components/Hero/Hero';
@@ -10,6 +11,9 @@ const Wrapper = styled.main`
 `;
 
 export const Home = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <>
       <Wrapper>
