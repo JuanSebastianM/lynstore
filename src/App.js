@@ -8,6 +8,8 @@ import { Acerca } from './pages/Acerca';
 import { Productos } from './pages/Productos';
 import { Contacto } from './pages/Contacto';
 import { PreguntasFrecuentes } from './pages/PreguntasFrecuentes';
+import { Error } from './pages/Error';
+import { ScrollTopBtn } from './components/ScrollTopBtn';
 
 const GlobalStyle = createGlobalStyle`
 html {
@@ -141,7 +143,6 @@ p, a, li {
   }
 }
 .text-wrapper {
-  background-image: linear-gradient(0deg, #ffd3d336, #ffd3d336);
   padding: 0 30px;
   @media screen and (min-width: 1023px) {
     padding: 0 40px;
@@ -512,9 +513,10 @@ function App() {
         <Route path='productos' element={<Productos />} />
         <Route path='contacto' element={<Contacto />} />
         <Route path='preguntas-frecuentes' element={<PreguntasFrecuentes />} />
-        {/* <Route path='*' element={<Error />} /> */}
+        <Route path='*' element={<Error />} />
       </Routes>
       <Footer />
+      <ScrollTopBtn />
     </>
   );
 }
